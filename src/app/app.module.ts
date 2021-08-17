@@ -7,6 +7,7 @@ import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { LeftNavMenuComponent } from './left-nav-menu/left-nav-menu.component';
 import { PageShipsComponent } from './page-ships/page-ships.component';
 import { PageHeroesComponent } from './page-heroes/page-heroes.component';
+import { PageBattleComponent } from './page-battle/page-battle.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PageHeroesComponent } from './page-heroes/page-heroes.component';
     TopNavBarComponent,
     LeftNavMenuComponent,
     PageShipsComponent,
-    PageHeroesComponent
+    PageHeroesComponent,
+    PageBattleComponent
   ],
   imports: [
     BrowserModule,
