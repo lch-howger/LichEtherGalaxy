@@ -12,4 +12,7 @@ export class PageShipsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mintShip() {
+    alert("a")
+  }
 }
