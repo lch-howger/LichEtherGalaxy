@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Web3 from "web3";
+import Web3Modal from "web3modal";
 
 @Component({
   selector: 'app-page-main',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageMainComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
   }
+
+
 
 }
