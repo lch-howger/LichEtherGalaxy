@@ -5,3 +5,12 @@
   background: #eef;
   float: left;
 }
+
+.menu_item {
+  border-bottom: black 1px solid;
+  text-decoration: none;
+  color: red;
+  display: block;
+  line-height: 50px;
+  padding: 20px;
+}
