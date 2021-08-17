@@ -5,5 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class WalletService {
 
-  constructor() { }
+  public str:string="a"
+
+  constructor() {
+    this.str="abc"
+  }
 }

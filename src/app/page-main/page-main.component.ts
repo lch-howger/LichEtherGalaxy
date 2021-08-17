@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WalletService} from "../service/wallet.service";
 import Web3 from "web3";
-
 
 @Component({
   selector: 'app-page-main',
@@ -9,13 +9,13 @@ import Web3 from "web3";
 })
 export class PageMainComponent implements OnInit {
 
-  constructor() {
-
+  constructor(private walletService: WalletService) {
   }
 
   ngOnInit(): void {
   }
 
-
-
+  testMain() {
+    alert(this.walletService.str)
+  }
 }

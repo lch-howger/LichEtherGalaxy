@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {WalletService} from "../service/wallet.service";
 import web3 from 'web3';
 
 @Component({
@@ -8,13 +9,13 @@ import web3 from 'web3';
 })
 export class PageShipsComponent implements OnInit {
 
-  constructor() {
+  constructor(private walletService: WalletService) {
   }
 
   ngOnInit(): void {
   }
 
   mintShip() {
-    alert("a")
+    alert(this.walletService.str)
   }
 }
