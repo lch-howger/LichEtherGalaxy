@@ -8,6 +8,7 @@ import { LeftNavMenuComponent } from './left-nav-menu/left-nav-menu.component';
 import { PageShipsComponent } from './page-ships/page-ships.component';
 import { PageHeroesComponent } from './page-heroes/page-heroes.component';
 import { PageBattleComponent } from './page-battle/page-battle.component';
+import { PageMainComponent } from './page-main/page-main.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PageBattleComponent } from './page-battle/page-battle.component';
     LeftNavMenuComponent,
     PageShipsComponent,
     PageHeroesComponent,
-    PageBattleComponent
+    PageBattleComponent,
+    PageMainComponent
   ],
   imports: [
     BrowserModule,
