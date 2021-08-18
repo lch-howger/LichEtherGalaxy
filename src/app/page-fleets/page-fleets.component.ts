@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WalletService} from "../service/wallet.service";
 
 @Component({
   selector: 'app-page-fleets',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageFleetsComponent implements OnInit {
 
-  constructor() { }
+  public ships: any
+  public heroes: any
+
+  constructor(private walletService: WalletService) {
+  }
 
   ngOnInit(): void {
+    this.walletService.contract.methods.lightYear_userFleets(0).call({
+      from: this.walletService.addr
+    }).then((value: any) => {
+      console.log(value[0])
+      console.log(value[1])
+      this.ships = value[0]
+      this.heroes = value[1]
+    })
   }
+
 
 }
