@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WalletService} from "../service/wallet.service";
 
 @Component({
   selector: 'app-page-battle',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageBattleComponent implements OnInit {
 
-  constructor() { }
+  public addrs: string[] = []
 
-  ngOnInit(): void {
+  constructor(private walletService: WalletService) {
   }
 
+  ngOnInit(): void {
+    this.walletService.contract.methods.lightYear_userList().call().then((addrs: any) => {
+      this.addrs = addrs
+    })
+  }
+
+  battle() {
+    alert("a")
+  }
 }

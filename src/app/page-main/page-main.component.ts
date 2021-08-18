@@ -26,8 +26,7 @@ export class PageMainComponent implements OnInit {
   }
 
   testMain() {
-    const contract = new this.web3.eth.Contract(abi_light_year, config.addr_light_year);
-    contract.methods.lightYear_userList().call().then((value: any) => {
+    this.walletService.contract.methods.lightYear_userList().call().then((value: any) => {
       console.log(value)
     })
   }
