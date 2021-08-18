@@ -45,12 +45,12 @@ function getBrowserConfig(wco) {
     resolve: {
       mainFields: ['es2015', 'browser', 'module', 'main'],
       fallback: {
-        http: false,
-        https: false,
-        stream: false,
-        crypto: false,
-        os: false,
-        assert: false
+        http: require.resolve("stream-http"),
+        https: require.resolve("https-browserify"),
+        crypto: require.resolve("crypto-browserify"),
+        stream: require.resolve("stream-browserify"),
+        os: require.resolve("os-browserify/browser"),
+        assert: require.resolve("assert/"),
       }
     },
     output: {
