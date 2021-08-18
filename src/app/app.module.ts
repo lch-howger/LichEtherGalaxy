@@ -9,6 +9,7 @@ import { PageShipsComponent } from './page-ships/page-ships.component';
 import { PageHeroesComponent } from './page-heroes/page-heroes.component';
 import { PageBattleComponent } from './page-battle/page-battle.component';
 import { PageMainComponent } from './page-main/page-main.component';
+import { DivTestComponent } from './div-test/div-test.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PageMainComponent } from './page-main/page-main.component';
     PageShipsComponent,
     PageHeroesComponent,
     PageBattleComponent,
-    PageMainComponent
+    PageMainComponent,
+    DivTestComponent
   ],
   imports: [
     BrowserModule,
