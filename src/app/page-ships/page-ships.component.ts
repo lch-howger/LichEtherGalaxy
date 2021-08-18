@@ -16,6 +16,6 @@ export class PageShipsComponent implements OnInit {
   }
 
   mintShip() {
-    alert(this.walletService.str)
+
   }
 }
