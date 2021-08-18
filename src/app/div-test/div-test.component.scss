@@ -1,15 +1,18 @@
 
 .div-test-content {
   width: 100%;
-  height: 500px;
-  display: flex;
+  height: 200px;
 }
 
 .div-left {
   background: #ffe;
   height: 200px;
+  width: 200px;
+  float: left;
 }
 
 .div-middle {
+  float: left;
+  width: 200px;
   height: 200px;
 }
