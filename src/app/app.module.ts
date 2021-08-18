@@ -10,6 +10,7 @@ import { PageHeroesComponent } from './page-heroes/page-heroes.component';
 import { PageBattleComponent } from './page-battle/page-battle.component';
 import { PageMainComponent } from './page-main/page-main.component';
 import { DivTestComponent } from './div-test/div-test.component';
+import { PageFleetsComponent } from './page-fleets/page-fleets.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DivTestComponent } from './div-test/div-test.component';
     PageHeroesComponent,
     PageBattleComponent,
     PageMainComponent,
-    DivTestComponent
+    DivTestComponent,
+    PageFleetsComponent
   ],
   imports: [
     BrowserModule,
