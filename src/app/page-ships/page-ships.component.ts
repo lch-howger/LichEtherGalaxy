@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WalletService} from "../service/wallet.service";
 import web3 from 'web3';
-import "./page-ships"
 
 @Component({
   selector: 'app-page-ships',
