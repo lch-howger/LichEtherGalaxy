@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {WalletService} from "../service/wallet.service";
 import Web3 from "web3";
+import {abi_light_year} from "../../abi/abi_light_year";
+import {config} from 'src/config/config';
 
 @Component({
   selector: 'app-page-main',
@@ -28,6 +30,10 @@ export class PageMainComponent implements OnInit {
   }
 
   testMain() {
+    const contract = new this.web3.eth.Contract(abi_light_year, config.addr_light_year);
+    contract.methods.lightYear_userList().call().then((value: any) => {
+      console.log(value)
+    })
   }
 
 
