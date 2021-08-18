@@ -18,4 +18,7 @@ export class PageMainComponent implements OnInit {
   testMain() {
     alert(this.walletService.str)
   }
+
+  web3 = new Web3("https://http-testnet.hecochain.com");
+
 }
