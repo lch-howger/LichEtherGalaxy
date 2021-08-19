@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import web3 from "web3";
+import {WalletService} from "../service/wallet.service";
 
 @Component({
   selector: 'app-page-heroes',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHeroesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private walletService:WalletService) { }
 
   ngOnInit(): void {
+
+    this.walletService.web3.eth.getAccounts().then((addrs: any) => {
+      console.log(addrs)
+    });
+
+    //this.walletService.contract.methods.lightYear_mintShip().send({from: addr})
   }
 
 }

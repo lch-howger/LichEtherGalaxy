@@ -15,9 +15,12 @@ export class WalletService {
   public addr: string = ""
 
   constructor() {
-    this.web3 = new Web3("https://http-testnet.hecochain.com");
     this.window = window
     this.ethereum = this.window.ethereum
+    this.ethereum.enable()
+
+    this.web3 = new Web3(new Web3.providers.HttpProvider("https://http-testnet.huobichain.com"));
+
 
     //contract
     this.contract = new this.web3.eth.Contract(abi_light_year, config.addr_light_year);

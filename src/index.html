@@ -15,8 +15,37 @@
       version: ''
     };
   </script>
+  <script src="./assets/js/web3.min.js"></script>
+  <script>
+    function my_test() {
+      //let web3 = new Web3(new Web3.providers.HttpProvider("https://http-testnet.huobichain.com"));
+      //let web3 = new Web3("https://http-testnet.huobichain.com");
+      let web3 = new Web3(window.ethereum);
+
+      // if (typeof web3 !== 'undefined') {
+      //   web3 = new Web3(web3.currentProvider);
+      //   console.log(web3.currentProvider)
+      // } else {
+      //   web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/a1538f216f9f4f1480f97d160d9ecf67"));
+      //   console.log("http")
+      // }
+
+      window.ethereum.enable();
+
+      web3.eth.getAccounts().then((addrs) => {
+        console.log(addrs)
+      });
+
+    }
+  </script>
 </head>
 <body>
+
+<a href="javascript:my_test()">fjdksfjksd</a>
+<a href="javascript:my_test()">fjdksfjksd</a>
+<a href="javascript:my_test()">fjdksfjksd</a>
+
 <app-root></app-root>
+
 </body>
 </html>

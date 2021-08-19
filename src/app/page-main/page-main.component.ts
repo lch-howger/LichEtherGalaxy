@@ -11,24 +11,26 @@ import {config} from 'src/config/config';
 })
 export class PageMainComponent implements OnInit {
 
-  private web3: any
-  private ethereum: any
+  public window:any
+  public web3:any
   public addr: string = ""
 
-  constructor(private walletService: WalletService) {
-    this.web3 = walletService.web3
-    this.ethereum = walletService.ethereum
-    this.ethereum.enable()
+  constructor() {
+    this.window=window
   }
 
   ngOnInit(): void {
-    this.addr = this.walletService.addr
+
   }
 
   testMain() {
-    this.walletService.contract.methods.lightYear_userList().call().then((value: any) => {
-      console.log(value)
-    })
+    // this.web3=window.web3.cu
+    //
+    // this.window.ethereum.enable();
+    //
+    // web3.eth.getAccounts().then((addrs) => {
+    //   console.log(addrs)
+    // });
   }
 
 
