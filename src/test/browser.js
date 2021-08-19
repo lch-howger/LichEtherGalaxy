@@ -90,7 +90,7 @@ function getBrowserConfig(wco) {
       }),
       ...extraPlugins,
     ],
-    node: {"stream": true, "crypto": true},
+    node: false,
   };
 }
 
