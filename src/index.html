@@ -20,7 +20,7 @@
     function my_test() {
       //let web3 = new Web3(new Web3.providers.HttpProvider("https://http-testnet.huobichain.com"));
       //let web3 = new Web3("https://http-testnet.huobichain.com");
-      let web3 = new Web3(window.ethereum);
+
 
       // if (typeof web3 !== 'undefined') {
       //   web3 = new Web3(web3.currentProvider);
@@ -30,12 +30,16 @@
       //   console.log("http")
       // }
 
+      let web3 = new Web3(window.ethereum);
       window.ethereum.enable();
 
       web3.eth.getAccounts().then((addrs) => {
         console.log(addrs)
       });
 
+      console.log(ethereum.isMetaMask)
+      console.log(ethereum.isMetaMask)
+      console.log(ethereum.isMetaMask)
     }
   </script>
 </head>

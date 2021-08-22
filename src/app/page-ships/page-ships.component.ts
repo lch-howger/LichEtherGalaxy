@@ -14,7 +14,6 @@ export class PageShipsComponent implements OnInit {
   ethereum:any
 
   constructor(private walletService: WalletService) {
-    this.walletService.ethereum.enable()
   }
 
   ngOnInit(): void {
@@ -22,18 +21,18 @@ export class PageShipsComponent implements OnInit {
 
   mintShip() {
 
-    let web3 = new Web3('https://http-testnet.huobichain.com');
-    web3.setProvider(new Web3.providers.WebsocketProvider('wss://ws-testnet.hecochain.com'));
-
-    this.window=window
-    this.ethereum=this.window.ethereum
-    this.window.ethereum.enable()
-
-  this.ethereum.request({ method: 'eth_accounts' }).then((addrs:any)=>{
-    console.log(addrs)
-
-    this.walletService.contract.methods.lightYear_mintShip().send({from: addrs[0]})
-  });
+  //   let web3 = new Web3('https://http-testnet.huobichain.com');
+  //   web3.setProvider(new Web3.providers.WebsocketProvider('wss://ws-testnet.hecochain.com'));
+  //
+  //   this.window=window
+  //   this.ethereum=this.window.ethereum
+  //   this.window.ethereum.enable()
+  //
+  // this.ethereum.request({ method: 'eth_accounts' }).then((addrs:any)=>{
+  //   console.log(addrs)
+  //
+  //   this.walletService.contract.methods.lightYear_mintShip().send({from: addrs[0]})
+  // });
 
 
 

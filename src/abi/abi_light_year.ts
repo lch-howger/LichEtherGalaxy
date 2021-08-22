@@ -1,23 +1,28 @@
-export const abi_light_year = [
+export const abi_ship = [
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
   {
     "anonymous": false,
     "inputs": [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "_owner",
+        "name": "owner",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
-        "name": "_approved",
+        "name": "approved",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -30,19 +35,19 @@ export const abi_light_year = [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "_owner",
+        "name": "owner",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
-        "name": "_operator",
+        "name": "operator",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "bool",
-        "name": "_approved",
+        "name": "approved",
         "type": "bool"
       }
     ],
@@ -55,19 +60,19 @@ export const abi_light_year = [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "_from",
+        "name": "from",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
-        "name": "_to",
+        "name": "to",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -78,25 +83,25 @@ export const abi_light_year = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "_approved",
+        "name": "to",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
     "name": "approve",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "_owner",
+        "name": "owner",
         "type": "address"
       }
     ],
@@ -112,10 +117,36 @@ export const abi_light_year = [
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "baseURI",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "burnShip",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -133,13 +164,59 @@ export const abi_light_year = [
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getShipByTokenId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "attack",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "defense",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "agility",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "accuracy",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "health",
+            "type": "uint16"
+          }
+        ],
+        "internalType": "struct Ship.Info",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
-        "name": "_owner",
+        "name": "owner",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_operator",
+        "name": "operator",
         "type": "address"
       }
     ],
@@ -156,58 +233,7 @@ export const abi_light_year = [
   },
   {
     "inputs": [],
-    "name": "lightYear_mintHero",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lightYear_mintShip",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lightYear_ownerTokenList",
-    "outputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "i",
-        "type": "uint256"
-      }
-    ],
-    "name": "lightYear_userFleets",
-    "outputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "lightYear_userFleetsSize",
+    "name": "mintShip",
     "outputs": [
       {
         "internalType": "uint256",
@@ -215,36 +241,17 @@ export const abi_light_year = [
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "lightYear_userList",
+    "name": "name",
     "outputs": [
       {
-        "internalType": "address[]",
+        "internalType": "string",
         "name": "",
-        "type": "address[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "defenderAddress",
-        "type": "address"
-      }
-    ],
-    "name": "lightYear_viewBattle",
-    "outputs": [
-      {
-        "internalType": "bytes",
-        "name": "",
-        "type": "bytes"
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -254,7 +261,7 @@ export const abi_light_year = [
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
@@ -273,63 +280,63 @@ export const abi_light_year = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "_from",
+        "name": "from",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_to",
+        "name": "to",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
     "name": "safeTransferFrom",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "_from",
+        "name": "from",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_to",
+        "name": "to",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "tokenId",
         "type": "uint256"
       },
       {
         "internalType": "bytes",
-        "name": "data",
+        "name": "_data",
         "type": "bytes"
       }
     ],
     "name": "safeTransferFrom",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "_operator",
+        "name": "operator",
         "type": "address"
       },
       {
         "internalType": "bool",
-        "name": "_approved",
+        "name": "approved",
         "type": "bool"
       }
     ],
@@ -341,24 +348,149 @@ export const abi_light_year = [
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_from",
-        "type": "address"
-      },
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "supportsInterface",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "symbol",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenByIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
       {
         "internalType": "address",
-        "name": "_to",
+        "name": "owner",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "_tokenId",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenOfOwnerByIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenURI",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalSupply",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
     "name": "transferFrom",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "shipFromTokenId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "shipToTokenId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "upgradeShip",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]

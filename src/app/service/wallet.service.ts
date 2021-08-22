@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import Web3 from "web3";
-import {abi_light_year} from "../../abi/abi_light_year";
+import {abi_ship} from "../../abi/abi_light_year";
 import {config} from "../../config/config";
+import {log} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -10,27 +11,21 @@ export class WalletService {
 
   public web3: any
   public window: any
-  public ethereum: any
   public contract: any
   public addr: string = ""
 
   constructor() {
     this.window = window
-    this.ethereum = this.window.ethereum
-    this.ethereum.enable()
-
-    this.web3 = new Web3(new Web3.providers.HttpProvider("https://http-testnet.huobichain.com"));
-
+    this.web3 = new this.window['Web3'](this.window['ethereum']);
 
     //contract
-    this.contract = new this.web3.eth.Contract(abi_light_year, config.addr_light_year);
+    this.contract = new this.web3.eth.Contract(abi_ship, config.addr_light_year);
 
-    //get addr
-    this.ethereum
-      .request({method: 'eth_accounts'})
-      .then((addrs: any) => {
-        this.addr = addrs[0]
-      })
+  }
+
+  async getAddress()  {
+    let address=await this.web3.eth.getAccounts()
+    return address[0]
   }
 
   getBalance() {
