@@ -11,14 +11,16 @@ export class WalletService {
 
   public web3: any
   public window: any
-  public contract: any
+  public registryContract: any
+  public shipContract: any
 
   constructor() {
     this.window = window
     this.web3 = new this.window['Web3'](this.window['ethereum']);
 
     //contract
-    this.contract = new this.web3.eth.Contract(abi.abi_ship, config.addr_ship);
+    this.registryContract = new this.web3.eth.Contract(abi.abi_registry, config.addr_registry);
+    this.shipContract = new this.web3.eth.Contract(abi.abi_ship, config.addr_ship);
 
   }
 

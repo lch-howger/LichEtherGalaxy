@@ -24,8 +24,8 @@ export class PageShipsComponent implements OnInit {
 
   async refresh() {
     this.addr = await this.walletService.getAddress()
-    this.shipAmount = await this.walletService.contract.methods.balanceOf(this.addr).call();
-    this.shipIdArray = await this.walletService.contract.methods.getOwnerTokens().call({from: this.addr});
+    this.shipAmount = await this.walletService.shipContract.methods.balanceOf(this.addr).call();
+    this.shipIdArray = await this.walletService.shipContract.methods.getOwnerTokens().call({from: this.addr});
 
     for (let i = 0; i < this.shipIdArray.length; i++) {
 
@@ -33,7 +33,7 @@ export class PageShipsComponent implements OnInit {
   }
 
   mintShip() {
-    this.walletService.contract.methods.mintShip().send({
+    this.walletService.shipContract.methods.mintShip().send({
       from: this.addr,
       gas: 400000,
     }).then(() => {
@@ -42,7 +42,7 @@ export class PageShipsComponent implements OnInit {
   }
 
   async shipDetail(index: number) {
-    this.ship = await this.walletService.contract.methods.getShipByTokenId(index).call();
+    this.ship = await this.walletService.shipContract.methods.getShipByTokenId(index).call();
 
   }
 }

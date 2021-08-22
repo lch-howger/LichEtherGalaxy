@@ -17,7 +17,6 @@ export class PageHeroesComponent implements OnInit {
       console.log(addrs)
     });
 
-    //this.walletService.contract.methods.lightYear_mintShip().send({from: addr})
   }
 
 }

@@ -11,6 +11,7 @@ import { PageBattleComponent } from './page-battle/page-battle.component';
 import { PageMainComponent } from './page-main/page-main.component';
 import { DivTestComponent } from './div-test/div-test.component';
 import { PageFleetsComponent } from './page-fleets/page-fleets.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { PageFleetsComponent } from './page-fleets/page-fleets.component';
     DivTestComponent,
     PageFleetsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

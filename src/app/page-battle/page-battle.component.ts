@@ -14,7 +14,7 @@ export class PageBattleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.walletService.contract.methods.lightYear_userList().call().then((addrs: any) => {
+    this.walletService.shipContract.methods.lightYear_userList().call().then((addrs: any) => {
       this.addrs = addrs
     })
   }
