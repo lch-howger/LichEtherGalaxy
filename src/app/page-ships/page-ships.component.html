@@ -2,5 +2,11 @@
 
 <p>Ships数量: {{shipAmount}}</p>
 <p>Ships列表: {{shipIdArray}}</p>
+<ul>
+  <li *ngFor="let item of shipIdArray;let key=index;">
+    <a href="javascript:" (click)="shipDetail(key)">ID---{{item}}</a>
+  </li>
+</ul>
 
+<p>Ship详情:{{ship}}</p>
 <button (click)="mintShip()">抽取新的Ship</button>

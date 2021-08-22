@@ -11,7 +11,9 @@ export class PageShipsComponent implements OnInit {
 
   addr: string = ""
   shipAmount: number = 0
-  shipIdArray:number[]=[]
+  shipIdArray: number[] = []
+  ship: any;
+  shipArray:string[]=[]
 
   constructor(private walletService: WalletService) {
   }
@@ -20,18 +22,27 @@ export class PageShipsComponent implements OnInit {
     this.refresh()
   }
 
-
   async refresh() {
     this.addr = await this.walletService.getAddress()
     this.shipAmount = await this.walletService.contract.methods.balanceOf(this.addr).call();
     this.shipIdArray = await this.walletService.contract.methods.getOwnerTokens().call({from: this.addr});
-    console.log(this.shipIdArray)
+
+    for (let i = 0; i < this.shipIdArray.length; i++) {
+
+    }
   }
 
   mintShip() {
     this.walletService.contract.methods.mintShip().send({
       from: this.addr,
       gas: 400000,
+    }).then(() => {
+      this.refresh()
     })
+  }
+
+  async shipDetail(index: number) {
+    this.ship = await this.walletService.contract.methods.getShipByTokenId(index).call();
+
   }
 }
