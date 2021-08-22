@@ -1,14 +1,9 @@
 
 <h1>Fleets</h1>
-<p>ships列表:</p>
-<ul>
-  <li *ngFor="let item of ships">{{item}}</li>
-</ul>
-<br>
-<br>
-<br>
-<br>
-<p>heroes列表:</p>
-<ul>
-  <li *ngFor="let item of heroes">{{item}}</li>
-</ul>
+
+<h2>舰队数量:{{fleetsSize}}</h2>
+<h2>所有舰队: {{fleetsString}}</h2>
+
+<button (click)="createFleet()">创建新舰队</button>
+
+<h2 *ngFor="let item of fleets;let key=index;">第{{key}}舰队: {{item}}</h2>

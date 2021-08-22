@@ -14,6 +14,9 @@ export class PageShipsComponent implements OnInit {
   shipIdArray: number[] = []
   ship: any;
   shipArray:string[]=[]
+  fleetNumberArray:number[]=[]
+  public fleetsSize: number = 0
+  public fleets: any
 
   constructor(private walletService: WalletService) {
   }
@@ -27,8 +30,10 @@ export class PageShipsComponent implements OnInit {
     this.shipAmount = await this.walletService.shipContract.methods.balanceOf(this.addr).call();
     this.shipIdArray = await this.walletService.shipContract.methods.getOwnerTokens().call({from: this.addr});
 
-    for (let i = 0; i < this.shipIdArray.length; i++) {
-
+    this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
+    this.fleetsSize = this.fleets.length
+    for (let i = 0; i < this.fleetsSize; i++) {
+      this.fleetNumberArray.push(i)
     }
   }
 
@@ -43,6 +48,11 @@ export class PageShipsComponent implements OnInit {
 
   async shipDetail(index: number) {
     this.ship = await this.walletService.shipContract.methods.getShipByTokenId(index).call();
+  }
 
+  chooseFleet(tokenId:number,fleetIndex:number) {
+    console.log(tokenId)
+    console.log(fleetIndex)
+    this.walletService.homeContract.methods.operateFleetShip(tokenId, fleetIndex).send({from: this.addr});
   }
 }
