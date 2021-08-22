@@ -15,14 +15,7 @@ export class PageFleetsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.walletService.contract.methods.lightYear_userFleets(0).call({
-      from: this.walletService.addr
-    }).then((value: any) => {
-      console.log(value[0])
-      console.log(value[1])
-      this.ships = value[0]
-      this.heroes = value[1]
-    })
+
   }
 
 

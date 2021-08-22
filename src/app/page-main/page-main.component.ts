@@ -12,22 +12,14 @@ export class PageMainComponent implements OnInit {
   public addr: string = ""
 
   constructor(private walletService: WalletService) {
-    this.addr = this.walletService.addr
   }
 
   ngOnInit(): void {
-    this.loadAddress()
+    this.refresh()
   }
 
-  async loadAddress() {
+  async refresh() {
     this.addr = await this.walletService.getAddress()
-  }
-
-  testMain() {
-    this.walletService.contract.methods.mintShip().send({
-      from: this.addr,
-      gas: 400000,
-    })
   }
 
 
