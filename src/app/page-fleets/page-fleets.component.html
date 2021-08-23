@@ -8,7 +8,7 @@
 
 <ul>
   <li *ngFor="let fleet of fleets;let key=index;">第{{key}}舰队:
-    <p>status: {{fleet[0]}}</p>
+    <p>status: {{getStatusString(fleet[0])}}</p>
     <p>startTime: {{fleet[1]}}</p>
     <p>endTime: {{fleet[2]}}</p>
     <p>飞船数量: {{fleet[3].length}}</p>

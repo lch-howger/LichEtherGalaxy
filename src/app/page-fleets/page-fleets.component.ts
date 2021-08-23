@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WalletService} from "../service/wallet.service";
+import {getFleetStatusString} from "./fleet-status";
 
 @Component({
   selector: 'app-page-fleets',
@@ -11,7 +12,7 @@ export class PageFleetsComponent implements OnInit {
   public addr: string = ""
   public fleetsSize: number = 0
   public fleets: any
-  public fleetsString:string=""
+  public fleetsString: string = ""
 
   constructor(private walletService: WalletService) {
   }
@@ -32,4 +33,7 @@ export class PageFleetsComponent implements OnInit {
     })
   }
 
+  getStatusString(key: any) {
+    return getFleetStatusString(key)
+  }
 }
