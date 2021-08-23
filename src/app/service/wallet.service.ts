@@ -19,6 +19,10 @@ export class WalletService {
     this.window = window
     this.web3 = new this.window['Web3'](this.window['ethereum']);
 
+    this.web3.eth.getAccounts().then((value:any)=>{
+      console.log(value)
+    })
+
     //contract
     this.registryContract = new this.web3.eth.Contract(abi.abi_registry, config.addr_registry);
     this.shipContract = new this.web3.eth.Contract(abi.abi_ship, config.addr_ship);
@@ -30,6 +34,11 @@ export class WalletService {
     return addrs[0]
   }
 
+  connectWallet() {
+    this.window['ethereum'].enable()
+  }
+
   getBalance() {
   }
+
 }

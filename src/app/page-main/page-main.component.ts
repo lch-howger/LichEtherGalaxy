@@ -16,7 +16,7 @@ export class PageMainComponent implements OnInit {
   public heroAddr: string = ""
   public homeAddr: string = ""
   public battleAddr: string = ""
-  param:any
+  param: any
 
   constructor(private walletService: WalletService) {
 
@@ -33,7 +33,7 @@ export class PageMainComponent implements OnInit {
     this.heroAddr = await this.walletService.registryContract.methods.hero().call()
     this.homeAddr = await this.walletService.registryContract.methods.home().call()
     this.battleAddr = await this.walletService.registryContract.methods.battle().call()
-    this.param={from:this.addr}
+    this.param = {from: this.addr}
   }
 
   setShip() {
@@ -51,4 +51,10 @@ export class PageMainComponent implements OnInit {
   setBattle() {
     this.walletService.registryContract.methods.setBattle(this.battleAddr).send(this.param)
   }
+
+  async connectWallet() {
+    this.walletService.connectWallet()
+    this.refresh()
+  }
+
 }
