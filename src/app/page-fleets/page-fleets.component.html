@@ -6,4 +6,15 @@
 
 <button (click)="createFleet()">创建新舰队</button>
 
-<h2 *ngFor="let item of fleets;let key=index;">第{{key}}舰队: {{item}}</h2>
+<ul>
+  <li *ngFor="let fleet of fleets;let key=index;">第{{key}}舰队:
+    <p>status: {{fleet[0]}}</p>
+    <p>startTime: {{fleet[1]}}</p>
+    <p>endTime: {{fleet[2]}}</p>
+    <p>飞船数量: {{fleet[3].length}}</p>
+    <p>shipIdArray: {{fleet[3]}}</p>
+    <p>heroIdArray: {{fleet[4]}}</p>
+    <hr>
+  </li>
+</ul>
+
