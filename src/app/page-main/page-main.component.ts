@@ -16,6 +16,7 @@ export class PageMainComponent implements OnInit {
   public heroAddr: string = ""
   public homeAddr: string = ""
   public battleAddr: string = ""
+  public raresAddr: string = ""
   param: any
 
   constructor(private walletService: WalletService) {
@@ -33,6 +34,7 @@ export class PageMainComponent implements OnInit {
     this.heroAddr = await this.walletService.registryContract.methods.hero().call()
     this.homeAddr = await this.walletService.registryContract.methods.home().call()
     this.battleAddr = await this.walletService.registryContract.methods.battle().call()
+    this.raresAddr = await this.walletService.registryContract.methods.rares().call()
     this.param = {from: this.addr}
   }
 
