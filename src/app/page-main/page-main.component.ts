@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import Web3 from "web3";
 import {WalletService} from "../service/wallet.service";
 import {config} from "../../config/config";
+import {contractAbi} from "../../abi/abi_light_year";
 
 @Component({
   selector: 'app-page-main',
@@ -59,4 +60,7 @@ export class PageMainComponent implements OnInit {
     this.refresh()
   }
 
+  test() {
+    alert(contractAbi.abi_home)
+  }
 }

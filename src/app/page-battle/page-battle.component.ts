@@ -8,15 +8,17 @@ import {WalletService} from "../service/wallet.service";
 })
 export class PageBattleComponent implements OnInit {
 
-  public addrs: string[] = []
+  addr: string = ""
 
   constructor(private walletService: WalletService) {
   }
 
   ngOnInit(): void {
-    this.walletService.shipContract.methods.lightYear_userList().call().then((addrs: any) => {
-      this.addrs = addrs
-    })
+    this.refresh()
+  }
+
+  async refresh() {
+    this.addr = await this.walletService.getAddress()
   }
 
   battle() {
