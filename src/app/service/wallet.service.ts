@@ -14,6 +14,7 @@ export class WalletService {
   public registryContract: any
   public shipContract: any
   public homeContract: any
+  public raresContract: any
 
   constructor() {
     this.window = window
@@ -27,6 +28,7 @@ export class WalletService {
     this.registryContract = new this.web3.eth.Contract(abi.abi_registry, config.addr_registry);
     this.shipContract = new this.web3.eth.Contract(abi.abi_ship, config.addr_ship);
     this.homeContract = new this.web3.eth.Contract(abi.abi_home, config.addr_home);
+    this.raresContract = new this.web3.eth.Contract(abi.abi_rares, config.addr_rares);
   }
 
   async getAddress(): Promise<string> {

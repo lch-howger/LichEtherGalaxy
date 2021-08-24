@@ -1,1 +1,28 @@
-<p>page-explore works!</p>
+<h1>Explore</h1>
+<h3>当前时间: {{nowTime}}</h3>
+<h3>当前时间: {{nowTimeString}}</h3>
+<h3>当前Rares: {{balance}}</h3>
+
+<br>
+<br>
+
+开始探索(挖矿):
+<a href="javascript:" *ngFor="let item of fleets;let key=index;" (click)="startExplore(key)">{{key}},,,,</a>
+<p>
+  正在探索的舰队数量:{{exploreFleetsSize}}
+</p>
+
+<br>
+<br>
+
+<ul>
+  <li *ngFor="let fleet of fleets;let key=index;">
+    <div *ngIf="fleet.status==5">
+      <p>舰队:{{key}}</p>
+      <p>开始时间: {{fleet.missionStartTime}},,,{{nowTime-fleet.missionStartTime}}</p>
+      <p>预计获得Rares: {{nowTime-fleet.missionStartTime}}</p>
+      <button (click)="endExplore(key)">停止探索</button>
+      <hr>
+    </div>
+  </li>
+</ul>
