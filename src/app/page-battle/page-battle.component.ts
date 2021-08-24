@@ -10,6 +10,7 @@ export class PageBattleComponent implements OnInit {
 
   addr: string = ""
   userList: any
+  battleInfo: any
 
   constructor(private walletService: WalletService) {
   }
@@ -24,6 +25,8 @@ export class PageBattleComponent implements OnInit {
   }
 
   battle() {
-    alert("a")
+    this.walletService.battleContract.methods.viewBattle(this.addr).call().then((value: any) => {
+      this.battleInfo = value
+    })
   }
 }

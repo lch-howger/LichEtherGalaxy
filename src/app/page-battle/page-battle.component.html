@@ -1,4 +1,8 @@
 
-<p>
-  {{userList}}
-</p>
+<ul>
+  <li *ngFor="let item of userList" class="item_addr_list">
+    <a href="javascript:" (click)="battle()">{{item}}</a>
+  </li>
+</ul>
+
+<p>{{battleInfo}}</p>
