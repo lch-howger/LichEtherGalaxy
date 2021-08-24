@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import Web3 from "web3";
-import {abi} from "../../abi/abi_light_year";
+import {contractAbi} from "../../abi/abi_light_year";
 import {config} from "../../config/config";
 import {log} from "util";
 
@@ -25,10 +25,10 @@ export class WalletService {
     })
 
     //contract
-    this.registryContract = new this.web3.eth.Contract(abi.abi_registry, config.addr_registry);
-    this.shipContract = new this.web3.eth.Contract(abi.abi_ship, config.addr_ship);
-    this.homeContract = new this.web3.eth.Contract(abi.abi_home, config.addr_home);
-    this.raresContract = new this.web3.eth.Contract(abi.abi_rares, config.addr_rares);
+    this.registryContract = new this.web3.eth.Contract(contractAbi.abi_registry, config.addr_registry);
+    this.shipContract = new this.web3.eth.Contract(contractAbi.abi_ship, config.addr_ship);
+    this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home);
+    this.raresContract = new this.web3.eth.Contract(contractAbi.abi_rares, config.addr_rares);
   }
 
   async getAddress(): Promise<string> {
