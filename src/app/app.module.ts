@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import { PageExploreComponent } from './page-explore/page-explore.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageDetailComponent } from './page-detail/page-detail.component';
+import { PageBattleDetailComponent } from './page-battle-detail/page-battle-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PageDetailComponent } from './page-detail/page-detail.component';
     PageFleetsComponent,
     PageExploreComponent,
     PageHomeComponent,
-    PageDetailComponent
+    PageDetailComponent,
+    PageBattleDetailComponent
   ],
     imports: [
         BrowserModule,
