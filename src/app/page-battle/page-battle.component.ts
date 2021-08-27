@@ -9,7 +9,7 @@ import {WalletService} from "../service/wallet.service";
 export class PageBattleComponent implements OnInit {
 
   addr: string = ""
-  userList: any
+  userInfo: any
   battleInfo: any
 
   constructor(private walletService: WalletService) {
@@ -21,12 +21,7 @@ export class PageBattleComponent implements OnInit {
 
   async refresh() {
     this.addr = await this.walletService.getAddress()
-    this.userList = await this.walletService.homeContract.methods.getUserList().call()
+    this.battleInfo = await this.walletService.homeContract.methods.getUserBattleHistory(0).call();
   }
 
-  battle() {
-    this.walletService.battleContract.methods.viewBattle(this.addr).call().then((value: any) => {
-      this.battleInfo = value
-    })
-  }
 }
