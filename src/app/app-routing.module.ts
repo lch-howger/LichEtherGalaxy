@@ -6,6 +6,7 @@ import {PageBattleComponent} from "./page-battle/page-battle.component";
 import {PageMainComponent} from "./page-main/page-main.component";
 import {PageFleetsComponent} from "./page-fleets/page-fleets.component";
 import {PageExploreComponent} from "./page-explore/page-explore.component";
+import {PageHomeComponent} from "./page-home/page-home.component";
 
 const routes: Routes = [
   {path: '', component: PageMainComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'heroes', component: PageHeroesComponent},
   {path: 'battle', component: PageBattleComponent},
   {path: 'explore', component: PageExploreComponent},
+  {path: 'home', component: PageHomeComponent},
 ];
 
 @NgModule({

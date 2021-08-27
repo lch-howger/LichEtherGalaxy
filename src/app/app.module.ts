@@ -13,6 +13,7 @@ import { DivTestComponent } from './div-test/div-test.component';
 import { PageFleetsComponent } from './page-fleets/page-fleets.component';
 import {FormsModule} from "@angular/forms";
 import { PageExploreComponent } from './page-explore/page-explore.component';
+import { PageHomeComponent } from './page-home/page-home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PageExploreComponent } from './page-explore/page-explore.component';
     PageMainComponent,
     DivTestComponent,
     PageFleetsComponent,
-    PageExploreComponent
+    PageExploreComponent,
+    PageHomeComponent
   ],
     imports: [
         BrowserModule,
