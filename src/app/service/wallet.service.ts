@@ -28,7 +28,7 @@ export class WalletService {
     //contract
     this.registryContract = new this.web3.eth.Contract(contractAbi.abi_registry, config.addr_registry);
     this.shipContract = new this.web3.eth.Contract(contractAbi.abi_ship, config.addr_ship);
-    this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home);
+    this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home_proxy);
     this.raresContract = new this.web3.eth.Contract(contractAbi.abi_rares, config.addr_rares);
     this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
   }
