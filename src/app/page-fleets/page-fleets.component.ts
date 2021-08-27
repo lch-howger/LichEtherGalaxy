@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WalletService} from "../service/wallet.service";
 import {getFleetStatusString} from "./fleet-status";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-page-fleets',
@@ -14,7 +15,7 @@ export class PageFleetsComponent implements OnInit {
   public fleets: any
   public fleetsString: string = ""
 
-  constructor(private walletService: WalletService) {
+  constructor(private walletService: WalletService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -44,7 +45,7 @@ export class PageFleetsComponent implements OnInit {
   }
 
   goHome(key: number) {
-    this.walletService.homeContract.methods.goHome(key).send({from: this.addr}).then((value:any,error:any) => {
+    this.walletService.homeContract.methods.goHome(key).send({from: this.addr}).then((value: any, error: any) => {
       this.refresh()
     });
   }

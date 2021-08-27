@@ -1,4 +1,3 @@
-
 <h1>Fleets</h1>
 
 <h2>舰队数量:{{fleetsSize}}</h2>
@@ -15,6 +14,7 @@
     <p>飞船数量: {{fleet[4].length}}</p>
     <p>shipIdArray: {{fleet[4]}}</p>
     <p>heroIdArray: {{fleet[5]}}</p>
+    <button [routerLink]="['/detail',key]">详情</button>
     <button (click)="guardHome(key)">防守基地</button>
     <button (click)="goHome(key)">回家</button>
     <hr>

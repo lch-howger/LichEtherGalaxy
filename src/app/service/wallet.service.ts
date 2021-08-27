@@ -17,11 +17,13 @@ export class WalletService {
   public raresContract: any
   public battleContract: any
 
+  public nowDetailIndex: number = 0
+
   constructor() {
     this.window = window
     this.web3 = new this.window['Web3'](this.window['ethereum']);
 
-    this.web3.eth.getAccounts().then((value:any)=>{
+    this.web3.eth.getAccounts().then((value: any) => {
       console.log(value)
     })
 

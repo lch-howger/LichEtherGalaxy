@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {WalletService} from "../service/wallet.service";
 
 @Component({
   selector: 'app-page-detail',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageDetailComponent implements OnInit {
 
-  constructor() { }
+  fleetIndex: number = 0
+
+  constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      let index = params['index'];
+      if (index == -1) {
+        index = this.walletService.nowDetailIndex
+      } else {
+        this.walletService.nowDetailIndex = index;
+      }
+      this.fleetIndex = index
+    });
   }
+
 
 }

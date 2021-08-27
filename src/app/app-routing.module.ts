@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'battle', component: PageBattleComponent},
   {path: 'explore', component: PageExploreComponent},
   {path: 'home', component: PageHomeComponent},
-  {path: 'detail', component: PageDetailComponent},
+  {path: 'detail/:index', component: PageDetailComponent},
 ];
 
 @NgModule({
