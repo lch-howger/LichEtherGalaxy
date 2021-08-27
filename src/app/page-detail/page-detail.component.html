@@ -1,3 +1,14 @@
 
 <h1>Fleet-Detail</h1>
 <h1>第{{fleetIndex}}舰队</h1>
+
+<p>status: {{getStatusString(fleet[0])}}</p>
+<p>目标: {{fleet[1]}}</p>
+<p>startTime: {{fleet[2]}}</p>
+<p>endTime: {{fleet[3]}}</p>
+<p>飞船数量: {{fleet[4].length}}</p>
+<p>shipIdArray: {{fleet[4]}}</p>
+<p>heroIdArray: {{fleet[5]}}</p>
+
+<button (click)="guardHome()">防守基地</button>
+<button (click)="goHome()">回家</button>

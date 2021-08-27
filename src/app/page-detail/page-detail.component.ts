@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {WalletService} from "../service/wallet.service";
+import {getFleetStatusString} from "../page-fleets/fleet-status";
 
 @Component({
   selector: 'app-page-detail',
@@ -9,7 +10,9 @@ import {WalletService} from "../service/wallet.service";
 })
 export class PageDetailComponent implements OnInit {
 
+  addr: string = ""
   fleetIndex: number = 0
+  fleet: any
 
   constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
   }
@@ -23,8 +26,30 @@ export class PageDetailComponent implements OnInit {
         this.walletService.nowDetailIndex = index;
       }
       this.fleetIndex = index
+
+      this.refresh()
     });
   }
 
+  async refresh() {
+    this.addr = await this.walletService.getAddress()
+    this.fleet = await this.walletService.homeContract.methods.getFleet(this.addr, this.fleetIndex).call()
+  }
+
+  guardHome() {
+    this.walletService.homeContract.methods.guardHome(this.fleetIndex).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
+  goHome() {
+    this.walletService.homeContract.methods.goHome(this.fleetIndex).send({from: this.addr}).then((value: any, error: any) => {
+      this.refresh()
+    });
+  }
+
+  getStatusString(key: any) {
+    return getFleetStatusString(key)
+  }
 
 }
