@@ -36,4 +36,18 @@ export class PageFleetsComponent implements OnInit {
   getStatusString(key: any) {
     return getFleetStatusString(key)
   }
+
+  guardHome(key: number) {
+    this.walletService.homeContract.methods.guardHome(key).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
+  goHome(key: number) {
+    this.walletService.homeContract.methods.goHome(key).send({from: this.addr}).then((value:any,error:any) => {
+      this.refresh()
+    });
+  }
+
+
 }
