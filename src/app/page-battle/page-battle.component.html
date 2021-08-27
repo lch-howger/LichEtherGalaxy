@@ -1,9 +1,8 @@
-
 <h1>Battle</h1>
 
 <p>历史战斗信息</p>
 <ul>
-  <li *ngFor="let item of battleInfo">
-    <p>{{item}}</p>
+  <li *ngFor="let item of battleInfo;let key=index;">
+    <a [routerLink]="['/battle-detail',key]">{{key}}---{{item}}</a>
   </li>
 </ul>
