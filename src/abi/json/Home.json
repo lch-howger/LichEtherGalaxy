@@ -2,31 +2,14 @@
   {
     "inputs": [
       {
-        "internalType": "contract Registry",
-        "name": "registry_",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
       }
     ],
+    "name": "arriveHome",
+    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "_ownerUserInfoMap",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "nickname",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -138,9 +121,14 @@
       {
         "components": [
           {
-            "internalType": "enum Home.FleetStatus",
+            "internalType": "enum HomeModel.FleetStatus",
             "name": "status",
             "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
           },
           {
             "internalType": "uint256",
@@ -161,9 +149,36 @@
             "internalType": "uint256[]",
             "name": "heroIdArray",
             "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "gold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "silver",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "copper",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "iron",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
           }
         ],
-        "internalType": "struct Home.Fleet",
+        "internalType": "struct HomeModel.Fleet",
         "name": "",
         "type": "tuple"
       }
@@ -184,9 +199,14 @@
       {
         "components": [
           {
-            "internalType": "enum Home.FleetStatus",
+            "internalType": "enum HomeModel.FleetStatus",
             "name": "status",
             "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
           },
           {
             "internalType": "uint256",
@@ -207,9 +227,36 @@
             "internalType": "uint256[]",
             "name": "heroIdArray",
             "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "gold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "silver",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "copper",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "iron",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
           }
         ],
-        "internalType": "struct Home.Fleet[]",
+        "internalType": "struct HomeModel.Fleet[]",
         "name": "",
         "type": "tuple[]"
       }
@@ -230,9 +277,14 @@
       {
         "components": [
           {
-            "internalType": "enum Home.FleetStatus",
+            "internalType": "enum HomeModel.FleetStatus",
             "name": "status",
             "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
           },
           {
             "internalType": "uint256",
@@ -253,11 +305,57 @@
             "internalType": "uint256[]",
             "name": "heroIdArray",
             "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "gold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "silver",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "copper",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "iron",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
           }
         ],
-        "internalType": "struct Home.Fleet",
+        "internalType": "struct HomeModel.Fleet",
         "name": "",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getUserBattleHistory",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
       }
     ],
     "stateMutability": "view",
@@ -279,6 +377,55 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "goBattle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "goExplore",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "goHome",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "index",
         "type": "uint256"
@@ -292,12 +439,22 @@
   {
     "inputs": [
       {
+        "internalType": "uint8",
+        "name": "win",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
         "name": "index",
         "type": "uint256"
       }
     ],
-    "name": "missionHome",
+    "name": "handleBattleResult",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -385,6 +542,25 @@
         "internalType": "uint64",
         "name": "iron",
         "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "ownerUserInfoMap",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "nickname",
+        "type": "string"
       }
     ],
     "stateMutability": "view",

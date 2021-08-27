@@ -1,50 +1,142 @@
 [
-	{
-		"inputs": [
-			{
-				"internalType": "contract Registry",
-				"name": "registry_",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "defenderAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "fleetIndex",
-				"type": "uint256"
-			}
-		],
-		"name": "battle",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "defenderAddress",
-				"type": "address"
-			}
-		],
-		"name": "viewBattle",
-		"outputs": [
-			{
-				"internalType": "bytes",
-				"name": "",
-				"type": "bytes"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
+  {
+    "inputs": [
+      {
+        "internalType": "contract Registry",
+        "name": "registry_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "fleetIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "battle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getFleets",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum HomeModel.FleetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionStartTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionEndTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "shipIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "heroIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "gold",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "silver",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "copper",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "iron",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct HomeModel.Fleet[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getFleetsLength",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fleetIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "goBattle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "viewBattle",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
 ]
