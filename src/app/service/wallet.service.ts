@@ -16,6 +16,7 @@ export class WalletService {
   public homeContract: any
   public raresContract: any
   public battleContract: any
+  public testContract: any
 
   public nowDetailIndex: number = 0
 
@@ -33,6 +34,7 @@ export class WalletService {
     this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home_proxy);
     this.raresContract = new this.web3.eth.Contract(contractAbi.abi_rares, config.addr_rares);
     this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
+    this.testContract = new this.web3.eth.Contract(contractAbi.abi_test, config.addr_test);
   }
 
   async getAddress(): Promise<string> {

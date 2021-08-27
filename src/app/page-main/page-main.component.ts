@@ -61,6 +61,6 @@ export class PageMainComponent implements OnInit {
   }
 
   test() {
-    alert(contractAbi.abi_home)
+    this.walletService.testContract.methods.pushBytes("abc").send({from:this.addr})
   }
 }

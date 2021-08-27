@@ -2,17 +2,6 @@
   {
     "inputs": [
       {
-        "internalType": "contract Registry",
-        "name": "registry_",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "uint256",
         "name": "fleetIndex",
         "type": "uint256"
@@ -22,6 +11,35 @@
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fleetIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "goBattle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract Registry",
+        "name": "registry_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
     "inputs": [],
@@ -106,24 +124,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "target",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "fleetIndex",
-        "type": "uint256"
-      }
-    ],
-    "name": "goBattle",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
