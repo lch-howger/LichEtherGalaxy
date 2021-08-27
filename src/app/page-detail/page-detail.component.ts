@@ -12,7 +12,9 @@ export class PageDetailComponent implements OnInit {
 
   addr: string = ""
   fleetIndex: number = 0
-  fleet: any
+  fleet: any = [0, 0, 0, 0, [], [], 0]
+  userList: any
+  battleInfo: any
 
   constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
   }
@@ -20,20 +22,21 @@ export class PageDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       let index = params['index'];
-      if (index == -1) {
+      if (index == undefined || index == -1) {
         index = this.walletService.nowDetailIndex
       } else {
         this.walletService.nowDetailIndex = index;
       }
       this.fleetIndex = index
-
       this.refresh()
     });
   }
 
   async refresh() {
     this.addr = await this.walletService.getAddress()
-    this.fleet = await this.walletService.homeContract.methods.getFleet(this.addr, this.fleetIndex).call()
+    this.fleet = await this.walletService.homeContract.methods.getFleet(this.addr, this.fleetIndex).call();
+    this.userList = await this.walletService.homeContract.methods.getUserList().call()
+    console.log(this.fleet)
   }
 
   guardHome() {
@@ -52,4 +55,19 @@ export class PageDetailComponent implements OnInit {
     return getFleetStatusString(key)
   }
 
+  goBattle(target: string) {
+    // this.walletService.battleContract.methods.viewBattle().call().then((value: any) => {
+    //   this.battleInfo = value
+    //   console.log(value)
+    // })
+    this.walletService.battleContract.methods.goBattle(target, this.fleetIndex).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
+  battle() {
+    this.walletService.battleContract.methods.battle(this.fleetIndex).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
 }

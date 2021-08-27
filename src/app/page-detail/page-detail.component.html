@@ -1,4 +1,3 @@
-
 <h1>Fleet-Detail</h1>
 <h1>第{{fleetIndex}}舰队</h1>
 
@@ -12,3 +11,11 @@
 
 <button (click)="guardHome()">防守基地</button>
 <button (click)="goHome()">回家</button>
+<button (click)="battle()">攻击</button>
+
+<h2>攻击Battle</h2>
+<ul>
+  <li *ngFor="let item of userList" class="item_addr_list">
+    <a href="javascript:" (click)="goBattle(item)">{{item}}</a>
+  </li>
+</ul>
