@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WalletService} from "../service/wallet.service";
 
 @Component({
   selector: 'app-page-home',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHomeComponent implements OnInit {
 
-  constructor() { }
+  addr: string = ""
+  guardFleet: any
 
-  ngOnInit(): void {
+  constructor(private walletService: WalletService) {
   }
 
+  ngOnInit(): void {
+    this.refresh()
+  }
+
+  async refresh() {
+    this.addr = await this.walletService.getAddress();
+    this.guardFleet = await this.walletService.homeContract.methods.getGuardFleet(this.addr).call()
+  }
 }
