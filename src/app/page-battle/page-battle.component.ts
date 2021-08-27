@@ -21,7 +21,8 @@ export class PageBattleComponent implements OnInit {
 
   async refresh() {
     this.addr = await this.walletService.getAddress()
-    this.battleInfo = await this.walletService.homeContract.methods.getUserBattleHistory(0).call();
+    this.battleInfo = await this.walletService.homeContract.methods.getHistoryList(this.addr).call();
+    console.log(this.battleInfo)
   }
 
 }

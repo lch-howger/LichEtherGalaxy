@@ -27,12 +27,6 @@ export class PageHomeComponent implements OnInit {
     this.guardFleet = await this.walletService.homeContract.methods.getGuardFleet(this.addr).call()
     this.asset = await this.walletService.homeContract.methods.ownerAssetMap(this.addr).call()
     this.userInfo = await this.walletService.homeContract.methods.ownerUserInfoMap(this.addr).call();
-    console.log(this.userInfo)
-    console.log("a")
-    this.historyLength = await this.walletService.homeContract.methods.getHistoryLength().call();
-    console.log(this.historyLength)
-    this.myBytes = await this.walletService.homeContract.methods.myBytes(0).call();
-    console.log("mybytes::::" + this.myBytes)
   }
 
 }

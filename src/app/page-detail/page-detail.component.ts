@@ -36,7 +36,6 @@ export class PageDetailComponent implements OnInit {
     this.addr = await this.walletService.getAddress()
     this.fleet = await this.walletService.homeContract.methods.getFleet(this.addr, this.fleetIndex).call();
     this.userList = await this.walletService.homeContract.methods.getUserList().call()
-    console.log(this.fleet)
   }
 
   guardHome() {

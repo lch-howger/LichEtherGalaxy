@@ -2,4 +2,8 @@
 <h1>Battle</h1>
 
 <p>历史战斗信息</p>
-<p>{{battleInfo}}</p>
+<ul>
+  <li *ngFor="let item of battleInfo">
+    <p>{{item}}</p>
+  </li>
+</ul>
