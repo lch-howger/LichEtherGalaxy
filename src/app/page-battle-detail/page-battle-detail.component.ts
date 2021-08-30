@@ -11,7 +11,7 @@ export class PageBattleDetailComponent implements OnInit {
 
   addr: string = ""
   battleString: any
-  battleInfo: any=[]
+  battleInfo: any = []
   index: number = 0
 
   constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
@@ -35,7 +35,7 @@ export class PageBattleDetailComponent implements OnInit {
   }
 
   bytesToInfo(s: string) {
-    console.log(s)
+
     //check
     if (s.startsWith("0x")) {
       s = s.substring(2, s.length);
@@ -44,7 +44,6 @@ export class PageBattleDetailComponent implements OnInit {
       return "";
     }
 
-    console.log(s)
     //win
     let win = parseInt(s.substring(0, 2), 16);
 
@@ -67,7 +66,7 @@ export class PageBattleDetailComponent implements OnInit {
       battleArray: battleArray
     }
 
-    console.log(battleInfo)
+    //console.log(battleInfo)
 
     return battleInfo
   }
@@ -102,7 +101,7 @@ export class PageBattleDetailComponent implements OnInit {
     let battleArray = [];
     for (let i = 0; i < battleStrings.length; i++) {
       let str = battleStrings[i];
-      let direction = parseInt(str.substring(0, 2));
+      let direction = parseInt(str.substring(0, 2), 16);
       let params = this.directionToParams(direction)
       let attributeIndex = parseInt(str.substring(2, 4), 16);
       let delta = parseInt(str.substring(4, 12), 16);
