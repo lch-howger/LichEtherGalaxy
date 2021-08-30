@@ -1,3 +1,23 @@
-
 <h1>Battle-Detail</h1>
 <h2>战斗详情</h2>
+<h2>第{{index}}场战斗</h2>
+<p>{{battleString}}</p>
+
+<br>
+<br>
+
+<p>战斗结果: {{battleInfo.win}}</p>
+<p>开局我方血量: {{battleInfo.attackerHealth}}</p>
+<p>开局敌方血量: {{battleInfo.defenderHealth}}</p>
+
+<br>
+<br>
+
+<ul>
+  <li *ngFor="let item of battleInfo.battleArray;let key=index;">
+    <p>第{{key}}回合</p>
+    <p>{{item.fromIndex}}指向了{{item.toIndex}}</p>
+    <p>{{item.attributeIndex}}变成了{{item.delta}}</p>
+    <hr>
+  </li>
+</ul>
