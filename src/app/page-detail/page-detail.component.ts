@@ -50,6 +50,12 @@ export class PageDetailComponent implements OnInit {
     });
   }
 
+  arriveHome() {
+    this.walletService.homeContract.methods.arriveHome(this.fleetIndex).send({from: this.addr}).then((value: any, error: any) => {
+      this.refresh()
+    });
+  }
+
   getStatusString(key: any) {
     return getFleetStatusString(key)
   }
