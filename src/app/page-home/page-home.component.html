@@ -1,12 +1,49 @@
 <h1>Home</h1>
 
-<p>正在防守Home的舰队: {{guardFleet}}</p>
+<p>正在防守Home的舰队: </p>
+<ul>
+  <li *ngFor="let item of fleets;let key=index;">
+    <div *ngIf="item.status==1">
+      <p>第{{key}}舰队：</p>
+      <p>状态：{{getStatusString(item.status)}}</p>
+      <p>ship列表：{{item.shipIdArray}}</p>
+      <hr>
+    </div>
+  </li>
+</ul>
 
 <br>
 <br>
 
-<p>Asset</p>
+<p>基地资源：</p>
 <p>gold: {{asset.gold}}</p>
 <p>silver: {{asset.silver}}</p>
 <p>copper: {{asset.copper}}</p>
 <p>iron: {{asset.iron}}</p>
+
+<br>
+<br>
+
+<p>舰队列表：</p>
+<ul>
+  <li *ngFor="let item of fleets;let key=index;">
+    <p>第{{key}}舰队：</p>
+    <p>状态：{{getStatusString(item.status)}}</p>
+    <p>ship列表：{{item.shipIdArray}}</p>
+    <hr>
+  </li>
+</ul>
+
+<br>
+
+<p>所有飞船：</p>
+<p>{{shipIdArray}}</p>
+
+<br>
+<p>空闲飞船：</p>
+<div>
+  <span *ngFor="let item of freeShipArray">
+    {{item}},
+  </span>
+</div>
+
