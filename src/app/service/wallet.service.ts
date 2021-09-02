@@ -36,6 +36,11 @@ export class WalletService {
     this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
     this.testContract = new this.web3.eth.Contract(contractAbi.abi_test, config.addr_test);
     this.homeProxyContract = new this.web3.eth.Contract(contractAbi.abi_home_proxy, config.addr_home_proxy);
+
+    this.shipContract.events.Transfer({}, function (error: any, event: any) {
+      console.log(error)
+      console.log(event);
+    })
   }
 
   async getAddress(): Promise<string> {

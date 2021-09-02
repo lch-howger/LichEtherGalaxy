@@ -62,10 +62,7 @@ export class PageMainComponent implements OnInit {
   }
 
   test() {
-    let s: string = "hello world";
-    let buffer = Buffer.from(s);
-    //this.walletService.testContract.methods.pushBytes(buffer).send({from:this.addr})
-    this.walletService.homeContract.methods.saveBattleHistory(this.addr, buffer).send({from: this.addr})
+
   }
 
   setHomeAddress() {
