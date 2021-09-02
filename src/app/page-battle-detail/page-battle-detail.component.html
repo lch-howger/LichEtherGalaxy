@@ -16,8 +16,10 @@
 <ul>
   <li *ngFor="let item of battleInfo.battleArray;let key=index;">
     <p>第{{key}}回合</p>
-    <p>{{item.fromIndex}}指向了{{item.toIndex}}</p>
-    <p>{{item.attributeIndex}}变成了{{item.delta}}</p>
+    <p *ngIf="key%2==0">我方{{item.fromIndex}}号飞船 指向了敌方{{item.toIndex}}</p>
+    <p *ngIf="key%2==1">敌人{{item.fromIndex}}号飞船 指向了我方{{item.toIndex}}</p>
+    <p *ngIf="key%2==0">敌方{{item.toIndex}}号的{{item.attributeIndex}}（血量）变成了{{item.delta}}</p>
+    <p *ngIf="key%2==1">我方{{item.toIndex}}号的{{item.attributeIndex}}（血量）变成了{{item.delta}}</p>
     <hr>
   </li>
 </ul>

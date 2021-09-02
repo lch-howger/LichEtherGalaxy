@@ -1,6 +1,6 @@
 export const config = {
   addr_ship: "0x355c884C3034Aea5eabEE3334193Aa41eA4A1358",
-  addr_battle: "0x313c7aBD3826a46044FF61adfC34cEd66547C4CC",
+  addr_battle: "0xe577cdd58Ffb846203bD29C973B678CD751da6fE",
   addr_home_proxy: "0x25BBE8F700c190301174C2bCfF94C8957cd4b908",
   addr_registry: "0xdDAcC021c5B09aecd5506843B0C0211e5E2dF1E8",
 
