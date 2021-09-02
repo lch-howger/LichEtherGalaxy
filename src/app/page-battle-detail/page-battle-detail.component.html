@@ -18,8 +18,12 @@
     <p>第{{key}}回合</p>
     <p *ngIf="key%2==0">我方{{item.fromIndex}}号飞船 指向了敌方{{item.toIndex}}</p>
     <p *ngIf="key%2==1">敌人{{item.fromIndex}}号飞船 指向了我方{{item.toIndex}}</p>
-    <p *ngIf="key%2==0">敌方{{item.toIndex}}号的{{item.attributeIndex}}（血量）变成了{{item.delta}}</p>
-    <p *ngIf="key%2==1">我方{{item.toIndex}}号的{{item.attributeIndex}}（血量）变成了{{item.delta}}</p>
+    <p *ngIf="key%2==0">敌方{{item.toIndex}}号的{{item.attributeIndex}}（血量）变成了{{item.delta}}
+      <span>此时敌方血量：{{getHealthArray(1, item.toIndex, item.delta)}}</span>
+    </p>
+    <p *ngIf="key%2==1">我方{{item.toIndex}}号的{{item.attributeIndex}}（血量）变成了{{item.delta}}
+      <span>此时我方血量：{{getHealthArray(0, item.toIndex, item.delta)}}</span>
+    </p>
     <hr>
   </li>
 </ul>

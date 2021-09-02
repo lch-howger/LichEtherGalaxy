@@ -13,6 +13,8 @@ export class PageBattleDetailComponent implements OnInit {
   battleString: any
   battleInfo: any = []
   index: number = 0
+  attackerHealth: any
+  defenderHealth: any
 
   constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
   }
@@ -66,9 +68,21 @@ export class PageBattleDetailComponent implements OnInit {
       battleArray: battleArray
     }
 
-    //console.log(battleInfo)
+    this.attackerHealth = battleInfo.attackerHealth;
+    this.defenderHealth = battleInfo.defenderHealth;
 
     return battleInfo
+  }
+
+  getHealthArray(type: number, index: number, delta: number) {
+    let arr;
+    if (type == 0) {
+      arr = this.attackerHealth
+    } else {
+      arr = this.defenderHealth
+    }
+    arr[index] = delta;
+    return arr
   }
 
   healthStringToArray(s: string): number[] {
