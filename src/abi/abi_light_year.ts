@@ -5,6 +5,7 @@ import heroAbi from "./json/Hero.json"
 import battleAbi from "./json/Battle.json"
 import registryAbi from "./json/Registry.json"
 import testAbi from "./json/Test.json"
+import homeProxyAbi from "./json/HomeProxy.json"
 
 export const contractAbi = {
   "abi_ship": shipAbi,
@@ -13,5 +14,6 @@ export const contractAbi = {
   "abi_battle": battleAbi,
   "abi_registry": registryAbi,
   "abi_rares": raresAbi,
-  "abi_test": testAbi
+  "abi_test": testAbi,
+  "abi_home_proxy": homeProxyAbi
 }

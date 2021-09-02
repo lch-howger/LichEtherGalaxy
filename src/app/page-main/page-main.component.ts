@@ -19,6 +19,7 @@ export class PageMainComponent implements OnInit {
   public battleAddr: string = ""
   public raresAddr: string = ""
   param: any
+  public homeAddress: string = ""
 
   constructor(private walletService: WalletService) {
 
@@ -64,6 +65,10 @@ export class PageMainComponent implements OnInit {
     let s: string = "hello world";
     let buffer = Buffer.from(s);
     //this.walletService.testContract.methods.pushBytes(buffer).send({from:this.addr})
-    this.walletService.homeContract.methods.saveBattleHistory(this.addr,buffer).send({from:this.addr})
+    this.walletService.homeContract.methods.saveBattleHistory(this.addr, buffer).send({from: this.addr})
+  }
+
+  setHomeAddress() {
+    this.walletService.homeProxyContract.methods.setHome(this.homeAddress).send(this.param)
   }
 }
