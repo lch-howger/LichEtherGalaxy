@@ -37,7 +37,6 @@ export class PageHomeComponent implements OnInit {
 
     for (let i = 0; i < this.shipIdArray.length; i++) {
       this.freeShipArray.push(this.shipIdArray[i])
-      console.log(this.freeShipArray.length)
     }
 
     for (let i = 0; i < this.fleets.length; i++) {
@@ -55,8 +54,5 @@ export class PageHomeComponent implements OnInit {
   }
 
   test() {
-    console.log(this.shipIdArray.indexOf(5))
-    console.log(this.shipIdArray.indexOf(5))
-    console.log(this.shipIdArray.indexOf(5))
   }
 }

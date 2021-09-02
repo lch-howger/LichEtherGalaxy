@@ -14,7 +14,6 @@ export class PageHeroesComponent implements OnInit {
   ngOnInit(): void {
 
     this.walletService.web3.eth.getAccounts().then((addrs: any) => {
-      console.log(addrs)
     });
 
   }

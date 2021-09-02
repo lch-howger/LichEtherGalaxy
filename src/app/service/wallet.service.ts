@@ -26,7 +26,6 @@ export class WalletService {
     this.web3 = new this.window['Web3'](this.window['ethereum']);
 
     this.web3.eth.getAccounts().then((value: any) => {
-      console.log(value)
     })
 
     //contract

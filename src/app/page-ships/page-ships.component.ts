@@ -51,8 +51,6 @@ export class PageShipsComponent implements OnInit {
   }
 
   chooseFleet(tokenId:number,fleetIndex:number) {
-    console.log(tokenId)
-    console.log(fleetIndex)
     this.walletService.homeContract.methods.operateFleetShip(tokenId, fleetIndex).send({from: this.addr});
   }
 }
