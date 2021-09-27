@@ -1,6 +1,13 @@
-<app-top-nav-bar></app-top-nav-bar>
+<div class="page-welcome" [ngStyle]="{'display':showWelcome ? 'block' : 'none'}">
+  <h1 class="title">Welcome to Light Year</h1>
+  <button class="button_next" (click)="next()">Next</button>
+</div>
 
-<div class="page">
-  <app-left-nav-menu class="left-bar"></app-left-nav-menu>
-  <router-outlet class="content"></router-outlet>
+<div class="page-main" [ngStyle]="{'display':!showWelcome ? 'block' : 'none'}">
+  <app-top-nav-bar></app-top-nav-bar>
+
+  <div class="page">
+    <app-left-nav-menu class="left-bar"></app-left-nav-menu>
+    <router-outlet class="content"></router-outlet>
+  </div>
 </div>

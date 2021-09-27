@@ -11,5 +11,4 @@ export class PageWelcomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

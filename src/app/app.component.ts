@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LichEtherGalaxy';
+
+  showWelcome=true
+  next() {
+    this.showWelcome=false
+  }
 }
