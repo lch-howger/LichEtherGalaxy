@@ -10,6 +10,8 @@
 <ul>
   <li *ngFor="let item of heroIdArray; let key=index;">
       {{item}} ====> {{shipIdArray[key]}}
+    <input [(ngModel)]="tempShipIdArray[key]" type="text">
+    <button (click)="bindHeroShip(item,tempShipIdArray[key])">Bind</button>
   </li>
 </ul>
 

@@ -19,6 +19,7 @@ export class PageHeroesComponent implements OnInit {
   public fleets: any
 
   shipIdArray: number[] = []
+  tempShipIdArray: number[] = []
 
   constructor(private walletService: WalletService) {
   }
@@ -41,6 +42,7 @@ export class PageHeroesComponent implements OnInit {
     for (let i = 0; i < this.heroIdArray.length; i++) {
       let shipId = await this.walletService.homeContract.methods.heroShipMap(this.heroIdArray[i]).call();
       this.shipIdArray.push(shipId)
+      this.tempShipIdArray.push(shipId)
     }
   }
 
@@ -48,6 +50,14 @@ export class PageHeroesComponent implements OnInit {
     this.walletService.heroContract.methods.mintHero().send({
       from: this.addr,
       gas: 400000,
+    }).then(() => {
+      this.refresh()
+    })
+  }
+
+  bindHeroShip(heroId:number,shipId:number) {
+    this.walletService.homeContract.methods.bindHeroShip(heroId,shipId).send({
+      from: this.addr,
     }).then(() => {
       this.refresh()
     })
