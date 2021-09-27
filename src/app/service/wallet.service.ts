@@ -12,6 +12,7 @@ export class WalletService {
   public web3: any
   public window: any
   public registryContract: any
+  public heroContract: any
   public shipContract: any
   public homeContract: any
   public raresContract: any
@@ -30,6 +31,7 @@ export class WalletService {
 
     //contract
     this.registryContract = new this.web3.eth.Contract(contractAbi.abi_registry, config.addr_registry);
+    this.heroContract = new this.web3.eth.Contract(contractAbi.abi_hero, config.addr_hero);
     this.shipContract = new this.web3.eth.Contract(contractAbi.abi_ship, config.addr_ship);
     this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home_proxy);
     this.raresContract = new this.web3.eth.Contract(contractAbi.abi_rares, config.addr_rares);

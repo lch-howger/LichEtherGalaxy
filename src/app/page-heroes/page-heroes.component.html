@@ -1,10 +1,19 @@
-<p>page-heroes works!</p>
+<h1>Heros</h1>
 
-<div>
-  <ol>
-    <li>fads</li>
-    <li>fads</li>
-    <li>fads</li>
-    <li>fads</li>
-  </ol>
-</div>
+<p>Heros数量: {{heroAmount}}</p>
+<p>Heros列表: {{heroIdArray}}</p>
+<ul>
+  <li *ngFor="let item of heroIdArray;let key=index;">
+    <a href="javascript:" (click)="heroDetail(key)">ID---{{item}}</a>
+    将飞船配置到
+    <ul class="chooseFleet">
+      <li class="chooseFleet" *ngFor="let item2 of fleetNumberArray">
+        <button (click)="chooseFleet(item,item2)">{{item2}}</button>
+      </li>
+    </ul>
+
+  </li>
+</ul>
+
+<p>Hero详情:{{hero}}</p>
+<button (click)="mintHero()">抽取新的Hero</button>
