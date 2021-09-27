@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import web3 from "web3";
 import {WalletService} from "../service/wallet.service";
 
@@ -13,10 +13,12 @@ export class PageHeroesComponent implements OnInit {
   heroAmount: number = 0
   heroIdArray: number[] = []
   hero: any;
-  heroArray:string[]=[]
-  fleetNumberArray:number[]=[]
+  heroArray: string[] = []
+  fleetNumberArray: number[] = []
   public fleetsSize: number = 0
   public fleets: any
+
+  shipIdArray: number[] = []
 
   constructor(private walletService: WalletService) {
   }
@@ -35,6 +37,11 @@ export class PageHeroesComponent implements OnInit {
     for (let i = 0; i < this.fleetsSize; i++) {
       this.fleetNumberArray.push(i)
     }
+
+    for (let i = 0; i < this.heroIdArray.length; i++) {
+      let shipId = await this.walletService.homeContract.methods.heroShipMap(this.heroIdArray[i]).call();
+      this.shipIdArray.push(shipId)
+    }
   }
 
   mintHero() {
@@ -47,10 +54,10 @@ export class PageHeroesComponent implements OnInit {
   }
 
   async heroDetail(index: number) {
-    this.hero = await this.walletService.shipContract.methods.getHeroByTokenId(index).call();
+    this.hero = await this.walletService.heroContract.methods.getHeroByTokenId(index).call();
   }
 
-  chooseFleet(tokenId:number,fleetIndex:number) {
+  chooseFleet(tokenId: number, fleetIndex: number) {
     this.walletService.homeContract.methods.operateFleetHero(tokenId, fleetIndex).send({from: this.addr});
   }
 
