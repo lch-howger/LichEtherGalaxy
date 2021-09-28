@@ -21,6 +21,7 @@ export class PageMainComponent implements OnInit {
   public raresAddr: string = ""
   param: any
   public homeAddress: string = ""
+  balance: any
 
   constructor(private walletService: WalletService) {
 
@@ -39,6 +40,10 @@ export class PageMainComponent implements OnInit {
     this.battleAddr = await this.walletService.registryContract.methods.battle().call()
     this.raresAddr = await this.walletService.registryContract.methods.rares().call()
     this.param = {from: this.addr}
+
+    let balanceString = await this.walletService.getBalance();
+    this.balance = (Number(balanceString) / 1000000000000000000)+" ETH"
+
   }
 
   setShip() {
@@ -65,21 +70,21 @@ export class PageMainComponent implements OnInit {
 
   async switchToBsc() {
     await this.walletService.window['ethereum'].request({
-        method: 'wallet_addEthereumChain',
-        params: [
-          {
-            chainId: '0x61',
-            chainName: 'BSC-test',
-            nativeCurrency: {
-              name: 'BNB',
-              symbol: 'BNB',
-              decimals: 18,
-            },
-            rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545/'],
-            blockExplorerUrls: ['https://bscscan.com/'],
+      method: 'wallet_addEthereumChain',
+      params: [
+        {
+          chainId: '0x61',
+          chainName: 'BSC-test',
+          nativeCurrency: {
+            name: 'BNB',
+            symbol: 'BNB',
+            decimals: 18,
           },
-        ],
-      })
+          rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545/'],
+          blockExplorerUrls: ['https://bscscan.com/'],
+        },
+      ],
+    })
   }
 
   async switchToRinkeby() {

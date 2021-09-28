@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import Web3 from "web3";
 import {contractAbi} from "../../abi/abi_light_year";
 import {config} from "../../config/config";
-import {log} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -50,11 +49,14 @@ export class WalletService {
     return addrs[0]
   }
 
-  connectWallet() {
-    this.window['ethereum'].enable()
+  async getBalance():Promise<string>{
+    let addr = await this.getAddress();
+    let balance = await this.web3.eth.getBalance(addr);
+    return balance
   }
 
-  getBalance() {
+  connectWallet() {
+    this.window['ethereum'].enable()
   }
 
 }
