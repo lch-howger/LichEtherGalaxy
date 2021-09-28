@@ -62,16 +62,17 @@ export class PageMainComponent implements OnInit {
   }
 
   async test() {
-    let nftContract = new this.walletService.web3.eth.Contract(contractAbi.abi_sharpe_finance_cattle, config.addr_sharpe_finance_cattle);
-    let price = await nftContract.methods.TOKEN_PRICE().call();
-    console.log(price)
-
-    nftContract.methods.mintNft().send({from:this.addr,value:61800000000000000})
-
-    nftContract.events.Transfer({}, function (error: any, event: any) {
-      console.log(error)
-      console.log(event);
-    })
+    // let nftContract = new this.walletService.web3.eth.Contract(contractAbi.abi_sharpe_finance_cattle, config.addr_sharpe_finance_cattle);
+    // let price = await nftContract.methods.TOKEN_PRICE().call();
+    // console.log(price)
+    //
+    // nftContract.methods.mintNft().send({from:this.addr,value:61800000000000000})
+    //
+    // nftContract.events.Transfer({}, function (error: any, event: any) {
+    //   console.log(error)
+    //   console.log(event);
+    // })
+    alert("test")
   }
 
   setHomeAddress() {

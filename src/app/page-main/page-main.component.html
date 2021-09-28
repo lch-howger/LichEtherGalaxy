@@ -3,19 +3,22 @@
 <button (click)="connectWallet()">连接钱包</button>
 <p class="addr">您的地址: {{addr}}</p>
 
-<p>registry 地址: {{registryAddr}}</p>
-<p>ship 地址: {{shipAddr}}</p>
-<p>hero 地址: {{heroAddr}}</p>
-<p>home 地址: {{homeAddr}}</p>
-<p>battle 地址: {{battleAddr}}</p>
-<p>rares 地址: {{raresAddr}}</p>
+<div class="div_main">
 
-<input type="text" [(ngModel)]="shipAddr"><button (click)="setShip()">SetShip</button><br>
-<input type="text" [(ngModel)]="heroAddr"><button (click)="setHero()">SetHero</button><br>
-<input type="text" [(ngModel)]="homeAddr"><button (click)="setHome()">SetHome</button><br>
-<input type="text" [(ngModel)]="battleAddr"><button (click)="setBattle()">SetBattle</button><br>
+  <p>registry 地址: {{registryAddr}}</p>
+  <p>ship 地址: {{shipAddr}}</p>
+  <p>hero 地址: {{heroAddr}}</p>
+  <p>home 地址: {{homeAddr}}</p>
+  <p>battle 地址: {{battleAddr}}</p>
+  <p>rares 地址: {{raresAddr}}</p>
 
-<br>
+  <input type="text" [(ngModel)]="shipAddr"><button (click)="setShip()">SetShip</button><br>
+  <input type="text" [(ngModel)]="heroAddr"><button (click)="setHero()">SetHero</button><br>
+  <input type="text" [(ngModel)]="homeAddr"><button (click)="setHome()">SetHome</button><br>
+  <input type="text" [(ngModel)]="battleAddr"><button (click)="setBattle()">SetBattle</button><br>
 
-<p>HomeProxy设置home：</p>
-<input type="text" [(ngModel)]="homeAddress"><button (click)="setHomeAddress()">SetHome</button><br>
+  <br>
+
+  <p>HomeProxy设置home：</p>
+  <input type="text" [(ngModel)]="homeAddress"><button (click)="setHomeAddress()">SetHome</button><br>
+</div>

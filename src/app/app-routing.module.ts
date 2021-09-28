@@ -11,7 +11,7 @@ import {PageDetailComponent} from "./page-detail/page-detail.component";
 import {PageBattleDetailComponent} from "./page-battle-detail/page-battle-detail.component";
 
 const routes: Routes = [
-  {path: 'settings', component: PageMainComponent},
+  {path: '', component: PageMainComponent},
   {path: 'fleets', component: PageFleetsComponent},
   {path: 'ships', component: PageShipsComponent},
   {path: 'heroes', component: PageHeroesComponent},
