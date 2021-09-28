@@ -3,6 +3,7 @@ import Web3 from "web3";
 import {WalletService} from "../service/wallet.service";
 import {config} from "../../config/config";
 import {contractAbi} from "../../abi/abi_light_year";
+import {addWarning} from "@angular-devkit/build-angular/src/utils/webpack-diagnostics";
 
 @Component({
   selector: 'app-page-main',
@@ -57,8 +58,22 @@ export class PageMainComponent implements OnInit {
   }
 
   async connectWallet() {
-    this.walletService.connectWallet()
-    this.refresh()
+    // await this.walletService.window['ethereum'].on('accountsChanged', () => {
+    //   this.refresh()
+    //   console.log("aaaaaa")
+    //   console.log("aaaaaa")
+    //   console.log("aaaaaa")
+    //   console.log("aaaaaa")
+    // })
+    // await this.walletService.window['ethereum'].enable()
+
+    this.walletService.window['ethereum'].request({ method: 'eth_requestAccounts' }).then(()=>{
+      console.log("aaaaaaaaaaaaaaa")
+      console.log("aaaaaaaaaaaaaaa")
+      console.log("aaaaaaaaaaaaaaa")
+      console.log("aaaaaaaaaaaaaaa")
+      this.refresh()
+    })
   }
 
   async test() {
