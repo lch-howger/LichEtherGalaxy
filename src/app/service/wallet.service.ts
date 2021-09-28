@@ -51,6 +51,7 @@ export class WalletService {
   }
 
   connectWallet() {
+    this.window['ethereum'].enable()
   }
 
   getBalance() {
