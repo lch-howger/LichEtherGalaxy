@@ -58,9 +58,39 @@ export class PageMainComponent implements OnInit {
   }
 
   async connectWallet() {
-    this.walletService.window['ethereum'].request({ method: 'eth_requestAccounts' }).then(()=>{
+    this.walletService.window['ethereum'].request({method: 'eth_requestAccounts'}).then(() => {
       this.refresh()
     })
+  }
+
+  async switchToBsc() {
+    await this.walletService.window['ethereum'].request({
+        method: 'wallet_addEthereumChain',
+        params: [
+          {
+            chainId: '0x61',
+            chainName: 'BSC-test',
+            nativeCurrency: {
+              name: 'BNB',
+              symbol: 'BNB',
+              decimals: 18,
+            },
+            rpcUrls: ['https://data-seed-prebsc-1-s1.binance.org:8545/'],
+            blockExplorerUrls: ['https://bscscan.com/'],
+          },
+        ],
+      })
+  }
+
+  async switchToRinkeby() {
+    await this.walletService.window['ethereum'].request({
+      method: 'wallet_switchEthereumChain',
+      params: [
+        {
+          chainId: '0x4', // A 0x-prefixed hexadecimal string
+        }
+      ]
+    });
   }
 
   async test() {
