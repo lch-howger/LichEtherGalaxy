@@ -51,15 +51,6 @@ export class WalletService {
   }
 
   connectWallet() {
-    // this.window['ethereum'].enable()
-    // this.window['ethereum'].on('accountsChanged', function () {
-    // })
-    // this.window['ethereum'].request({ method: 'eth_requestAccounts' }).then(()=>{
-    //   console.log("aaaaaaaaaaaaaaa")
-    //   console.log("aaaaaaaaaaaaaaa")
-    //   console.log("aaaaaaaaaaaaaaa")
-    //   console.log("aaaaaaaaaaaaaaa")
-    // })
   }
 
   getBalance() {

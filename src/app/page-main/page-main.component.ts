@@ -58,20 +58,7 @@ export class PageMainComponent implements OnInit {
   }
 
   async connectWallet() {
-    // await this.walletService.window['ethereum'].on('accountsChanged', () => {
-    //   this.refresh()
-    //   console.log("aaaaaa")
-    //   console.log("aaaaaa")
-    //   console.log("aaaaaa")
-    //   console.log("aaaaaa")
-    // })
-    // await this.walletService.window['ethereum'].enable()
-
     this.walletService.window['ethereum'].request({ method: 'eth_requestAccounts' }).then(()=>{
-      console.log("aaaaaaaaaaaaaaa")
-      console.log("aaaaaaaaaaaaaaa")
-      console.log("aaaaaaaaaaaaaaa")
-      console.log("aaaaaaaaaaaaaaa")
       this.refresh()
     })
   }
