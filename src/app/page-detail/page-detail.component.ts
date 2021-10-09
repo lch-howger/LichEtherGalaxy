@@ -16,6 +16,7 @@ export class PageDetailComponent implements OnInit {
   userList: any
   battleInfo: any
   fleetLoad: number = 0
+  fleetAttack: number = 0
 
   constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
   }
@@ -37,6 +38,12 @@ export class PageDetailComponent implements OnInit {
     this.addr = await this.walletService.getAddress()
     this.fleet = await this.walletService.homeContract.methods.getFleet(this.addr, this.fleetIndex).call();
     this.userList = await this.walletService.homeContract.methods.getUserList().call()
+
+    for (let i = 0; i < this.fleet.shipIdArray.length; i++) {
+      let shipId = this.fleet.shipIdArray[i]
+      let ship = await this.walletService.shipContract.methods.getShipByTokenId(shipId).call();
+      this.fleetAttack += parseInt(ship.attack)
+    }
   }
 
   guardHome() {
