@@ -18,6 +18,7 @@ export class WalletService {
   public battleContract: any
   public testContract: any
   public homeProxyContract: any
+  public resourceContract:any
 
   public nowDetailIndex: number = 0
 
@@ -36,6 +37,7 @@ export class WalletService {
     this.raresContract = new this.web3.eth.Contract(contractAbi.abi_rares, config.addr_rares);
     this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
     this.testContract = new this.web3.eth.Contract(contractAbi.abi_test, config.addr_test);
+    this.resourceContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_resource);
     this.homeProxyContract = new this.web3.eth.Contract(contractAbi.abi_home_proxy, config.addr_home_proxy);
 
     this.shipContract.events.Transfer({}, function (error: any, event: any) {

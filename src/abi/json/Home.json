@@ -15,6 +15,30 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "battleHistoryMap",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "heroId",
         "type": "uint256"
@@ -125,6 +149,277 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getFleet",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum HomeModel.FleetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionStartTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionEndTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "shipIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "heroIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "gold",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "silver",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "copper",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "iron",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct HomeModel.Fleet",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "getFleets",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum HomeModel.FleetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionStartTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionEndTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "shipIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "heroIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "gold",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "silver",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "copper",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "iron",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct HomeModel.Fleet[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "getGuardFleet",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum HomeModel.FleetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionStartTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionEndTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "shipIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "heroIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "gold",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "silver",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "copper",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "iron",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct HomeModel.Asset",
+            "name": "asset",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct HomeModel.Fleet",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      }
+    ],
+    "name": "getHistoryList",
+    "outputs": [
+      {
+        "internalType": "bytes[]",
+        "name": "",
+        "type": "bytes[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getUserList",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "from",
         "type": "address"
       },
@@ -178,6 +473,19 @@
         "type": "uint256"
       }
     ],
+    "name": "goMarket",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
     "name": "guardHome",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -202,6 +510,43 @@
       }
     ],
     "name": "handleBattleResult",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "heroShipMap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "loadResource",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -263,6 +608,59 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "ownerAssetMap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "gold",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "silver",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "copper",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "iron",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "ownerUserInfoMap",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "nickname",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "index",
         "type": "uint256"
@@ -271,6 +669,19 @@
     "name": "quickFly",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "registry",
+    "outputs": [
+      {
+        "internalType": "contract Registry",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -287,6 +698,19 @@
       }
     ],
     "name": "saveBattleHistory",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "sellResource",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -346,386 +770,6 @@
     "name": "upgradeShip",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "battleHistoryMap",
-    "outputs": [
-      {
-        "internalType": "bytes",
-        "name": "",
-        "type": "bytes"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "addr",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
-      }
-    ],
-    "name": "getFleet",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "enum HomeModel.FleetStatus",
-            "name": "status",
-            "type": "uint8"
-          },
-          {
-            "internalType": "address",
-            "name": "target",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "missionStartTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "missionEndTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "shipIdArray",
-            "type": "uint256[]"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "heroIdArray",
-            "type": "uint256[]"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint64",
-                "name": "gold",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "silver",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "copper",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "iron",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct HomeModel.Asset",
-            "name": "asset",
-            "type": "tuple"
-          }
-        ],
-        "internalType": "struct HomeModel.Fleet",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "addr",
-        "type": "address"
-      }
-    ],
-    "name": "getFleets",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "enum HomeModel.FleetStatus",
-            "name": "status",
-            "type": "uint8"
-          },
-          {
-            "internalType": "address",
-            "name": "target",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "missionStartTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "missionEndTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "shipIdArray",
-            "type": "uint256[]"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "heroIdArray",
-            "type": "uint256[]"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint64",
-                "name": "gold",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "silver",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "copper",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "iron",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct HomeModel.Asset",
-            "name": "asset",
-            "type": "tuple"
-          }
-        ],
-        "internalType": "struct HomeModel.Fleet[]",
-        "name": "",
-        "type": "tuple[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "addr",
-        "type": "address"
-      }
-    ],
-    "name": "getGuardFleet",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "enum HomeModel.FleetStatus",
-            "name": "status",
-            "type": "uint8"
-          },
-          {
-            "internalType": "address",
-            "name": "target",
-            "type": "address"
-          },
-          {
-            "internalType": "uint256",
-            "name": "missionStartTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "missionEndTime",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "shipIdArray",
-            "type": "uint256[]"
-          },
-          {
-            "internalType": "uint256[]",
-            "name": "heroIdArray",
-            "type": "uint256[]"
-          },
-          {
-            "components": [
-              {
-                "internalType": "uint64",
-                "name": "gold",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "silver",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "copper",
-                "type": "uint64"
-              },
-              {
-                "internalType": "uint64",
-                "name": "iron",
-                "type": "uint64"
-              }
-            ],
-            "internalType": "struct HomeModel.Asset",
-            "name": "asset",
-            "type": "tuple"
-          }
-        ],
-        "internalType": "struct HomeModel.Fleet",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "addr",
-        "type": "address"
-      }
-    ],
-    "name": "getHistoryList",
-    "outputs": [
-      {
-        "internalType": "bytes[]",
-        "name": "",
-        "type": "bytes[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getUserList",
-    "outputs": [
-      {
-        "internalType": "address[]",
-        "name": "",
-        "type": "address[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "heroShipMap",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "ownerAssetMap",
-    "outputs": [
-      {
-        "internalType": "uint64",
-        "name": "gold",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "silver",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "copper",
-        "type": "uint64"
-      },
-      {
-        "internalType": "uint64",
-        "name": "iron",
-        "type": "uint64"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "ownerUserInfoMap",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "nickname",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "registry",
-    "outputs": [
-      {
-        "internalType": "contract Registry",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
