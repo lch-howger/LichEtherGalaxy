@@ -18,6 +18,7 @@ import { PageDetailComponent } from './page-detail/page-detail.component';
 import { PageBattleDetailComponent } from './page-battle-detail/page-battle-detail.component';
 import { PageWelcomeComponent } from './page-welcome/page-welcome.component';
 import { PageRankingComponent } from './page-ranking/page-ranking.component';
+import { PageMarketComponent } from './page-market/page-market.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PageRankingComponent } from './page-ranking/page-ranking.component';
     PageDetailComponent,
     PageBattleDetailComponent,
     PageWelcomeComponent,
-    PageRankingComponent
+    PageRankingComponent,
+    PageMarketComponent
   ],
     imports: [
         BrowserModule,
