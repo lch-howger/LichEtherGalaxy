@@ -1,1 +1,23 @@
-<p>page-market works!</p>
+
+<div class="div_all">
+  <p>我的宇宙现金：{{balance}}</p>
+  <br>
+  <br>
+  <p>在交易所的舰队：</p>
+  <br>
+  <br>
+  <div *ngFor="let item of fleets;let key=index;">
+    <div *ngIf="item.status==7">
+      <hr>
+      <p>第{{key}}舰队</p>
+      <p>状态：{{item.status}},在交易所</p>
+      <p>航行：{{timestamp()>=item.missionEndTime? "已经到达交易所":"正在往交易所航行"}}</p>
+      <p>装载资源：{{item.asset.gold}}</p>
+      <button (click)="sellResource(key)">卖掉资源变成宇宙现金</button>
+      <button (click)="goHome(key)">回家</button>
+      <hr>
+    </div>
+
+  </div>
+
+</div>

@@ -15,7 +15,7 @@ export class PageDetailComponent implements OnInit {
   fleet: any = [0, 0, 0, 0, [], [], 0]
   userList: any
   battleInfo: any
-  fleetLoad:number=0
+  fleetLoad: number = 0
 
   constructor(private walletService: WalletService, private activatedRoute: ActivatedRoute) {
   }
@@ -78,12 +78,14 @@ export class PageDetailComponent implements OnInit {
   }
 
   loadResource() {
-    this.walletService.homeContract.methods.loadResource(this.fleetIndex,this.fleetLoad).send({from: this.addr}).then(() => {
+    this.walletService.homeContract.methods.loadResource(this.fleetIndex, this.fleetLoad).send({from: this.addr}).then(() => {
       this.refresh()
     })
   }
 
   goMarket() {
-
+    this.walletService.homeContract.methods.goMarket(this.fleetIndex).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
   }
 }

@@ -1,24 +1,26 @@
 export enum FleetStatus {
-  Home, Guard, BattleGo, Damaged, Explore, ExploreGo, Back
+  Home, Guard, BattleGo, Damaged, Explore, ExploreGo, Back,Market
 }
 
 export function getFleetStatusString(key: any) {
   let num: number = +key;
   switch (num) {
     case FleetStatus.Home:
-      return "正在基地"
+      return num+"-正在基地"
     case FleetStatus.Guard:
-      return "正在守卫基地"
+      return num+"-正在守卫基地"
     case FleetStatus.BattleGo:
-      return "出发战斗"
+      return num+"-出发战斗"
     case FleetStatus.Damaged:
-      return "舰队损坏"
+      return num+"-舰队损坏"
     case FleetStatus.Explore:
-      return "正在探索"
+      return num+"-正在探索"
     case FleetStatus.ExploreGo:
-      return "出发探索"
+      return num+"-出发探索"
     case FleetStatus.Back:
-      return "回家中"
+      return num+"-回家中"
+    case FleetStatus.Market:
+      return num+"-宇宙交易所"
   }
   return ""
 }
