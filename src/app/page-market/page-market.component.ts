@@ -11,8 +11,11 @@ export class PageMarketComponent implements OnInit {
   addr: any
   balance: any
   fleets:any
+  erc20address:any
 
   constructor(private walletService: WalletService) {
+    this.erc20address="https://testnet.bscscan.com/address/"+this.walletService.resourceContract._address
+
   }
 
   ngOnInit(): void {
