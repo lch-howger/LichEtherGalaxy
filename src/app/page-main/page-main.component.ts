@@ -115,4 +115,8 @@ export class PageMainComponent implements OnInit {
   setHomeAddress() {
     this.walletService.homeProxyContract.methods.setHome(this.homeAddress).send(this.param)
   }
+
+  clearHomeData() {
+    this.walletService.homeContract.methods.clearHomeData().send(this.param)
+  }
 }
