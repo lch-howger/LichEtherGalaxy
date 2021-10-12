@@ -39,6 +39,7 @@ export class PageDetailComponent implements OnInit {
     this.fleet = await this.walletService.homeContract.methods.getFleet(this.addr, this.fleetIndex).call();
     this.userList = await this.walletService.homeContract.methods.getUserList().call()
 
+    this.fleetAttack = 0;
     for (let i = 0; i < this.fleet.shipIdArray.length; i++) {
       let shipId = this.fleet.shipIdArray[i]
       let ship = await this.walletService.shipContract.methods.getShipByTokenId(shipId).call();

@@ -13,10 +13,11 @@ export class PageShipsComponent implements OnInit {
   shipAmount: number = 0
   shipIdArray: number[] = []
   ship: any;
-  shipArray:string[]=[]
-  fleetNumberArray:number[]=[]
+  shipArray: string[] = []
+  fleetNumberArray: number[] = []
   public fleetsSize: number = 0
   public fleets: any
+  shipAttackArray: number[] = []
 
   constructor(private walletService: WalletService) {
   }
@@ -35,6 +36,13 @@ export class PageShipsComponent implements OnInit {
     for (let i = 0; i < this.fleetsSize; i++) {
       this.fleetNumberArray.push(i)
     }
+
+    this.shipAttackArray=[]
+    for (let i = 0; i < this.shipIdArray.length; i++) {
+      let tokenId = this.shipIdArray[i]
+      let ship = await this.walletService.shipContract.methods.getShipByTokenId(tokenId).call();
+      this.shipAttackArray.push(ship.attack);
+    }
   }
 
   mintShip() {
@@ -50,7 +58,8 @@ export class PageShipsComponent implements OnInit {
     this.ship = await this.walletService.shipContract.methods.getShipByTokenId(index).call();
   }
 
-  chooseFleet(tokenId:number,fleetIndex:number) {
+  chooseFleet(tokenId: number, fleetIndex: number) {
     this.walletService.homeContract.methods.operateFleetShip(tokenId, fleetIndex).send({from: this.addr});
   }
+
 }
