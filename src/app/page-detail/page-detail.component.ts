@@ -96,4 +96,10 @@ export class PageDetailComponent implements OnInit {
       this.refresh()
     })
   }
+
+  goAdventure() {
+    this.walletService.homeContract.methods.goAdventure(this.fleetIndex).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
 }

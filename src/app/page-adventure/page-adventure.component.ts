@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WalletService} from "../service/wallet.service";
 
 @Component({
   selector: 'app-page-adventure',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAdventureComponent implements OnInit {
 
-  constructor() { }
+  constructor(private walletService:WalletService) { }
 
   ngOnInit(): void {
+    this
   }
 
 }
