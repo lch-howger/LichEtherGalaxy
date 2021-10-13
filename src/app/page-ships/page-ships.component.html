@@ -5,7 +5,7 @@
 <ul>
   <li *ngFor="let item of shipIdArray;let key=index;">
     <a href="javascript:" (click)="shipDetail(key)">ID---{{item}}</a>
-    <span>：：：攻击力---{{shipAttackArray[key]}}</span>
+    <span>：：：攻击力---{{shipAttackArray[key]}}---英雄ID-{{heroIdArray[key]}}-英雄攻击-{{heroAttackArray[key]}}</span>
     将飞船配置到
     <ul class="chooseFleet">
       <li class="chooseFleet" *ngFor="let item2 of fleetNumberArray">

@@ -18,6 +18,8 @@ export class PageShipsComponent implements OnInit {
   public fleetsSize: number = 0
   public fleets: any
   shipAttackArray: number[] = []
+  heroIdArray: number[] = []
+  heroAttackArray: number[] = []
 
   constructor(private walletService: WalletService) {
   }
@@ -37,11 +39,19 @@ export class PageShipsComponent implements OnInit {
       this.fleetNumberArray.push(i)
     }
 
-    this.shipAttackArray=[]
+    this.shipAttackArray = []
     for (let i = 0; i < this.shipIdArray.length; i++) {
       let tokenId = this.shipIdArray[i]
       let ship = await this.walletService.shipContract.methods.getShipByTokenId(tokenId).call();
       this.shipAttackArray.push(ship.attack);
+    }
+
+    for (let i = 0; i < this.shipIdArray.length; i++) {
+      let tokenId = this.shipIdArray[i]
+      let heroId = await this.walletService.homeContract.methods.shipHeroMap(tokenId).call();
+      let hero=await this.walletService.heroContract.methods.getHeroByTokenId(heroId).call();
+      this.heroIdArray.push(heroId);
+      this.heroAttackArray.push(hero.attack);
     }
   }
 
