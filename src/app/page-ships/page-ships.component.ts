@@ -64,6 +64,12 @@ export class PageShipsComponent implements OnInit {
     })
   }
 
+  buildShip() {
+    this.walletService.shipContract.methods.buildShip().send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
   async shipDetail(index: number) {
     this.ship = await this.walletService.shipContract.methods.getShipByTokenId(index).call();
   }
