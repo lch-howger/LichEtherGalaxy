@@ -20,6 +20,7 @@ export class PageShipsComponent implements OnInit {
   shipAttackArray: number[] = []
   heroIdArray: number[] = []
   heroAttackArray: number[] = []
+  resourceBalance:any
 
   constructor(private walletService: WalletService) {
   }
@@ -53,6 +54,8 @@ export class PageShipsComponent implements OnInit {
       this.heroIdArray.push(heroId);
       this.heroAttackArray.push(hero.attack);
     }
+
+    this.resourceBalance=await this.walletService.resourceContract.methods.balanceOf(this.addr).call();
   }
 
   mintShip() {
@@ -65,7 +68,13 @@ export class PageShipsComponent implements OnInit {
   }
 
   buildShip() {
-    this.walletService.shipContract.methods.buildShip().send({from: this.addr}).then(() => {
+    this.walletService.homeContract.methods.buildShip().send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
+  quickMint() {
+    this.walletService.resourceContract.methods.mint(this.addr,10000).send({from: this.addr}).then(() => {
       this.refresh()
     })
   }
