@@ -18,7 +18,7 @@ export class WalletService {
   public battleContract: any
   public testContract: any
   public homeProxyContract: any
-  public resourceContract:any
+  public resourceContract: any
 
   public nowDetailIndex: number = 0
 
@@ -44,6 +44,26 @@ export class WalletService {
       console.log(error)
       console.log(event);
     })
+
+    this.homeContract.events.AdventureResult({}, function (error: any, event: any) {
+      handleAdventureResult(event.returnValues)
+    })
+
+    function handleAdventureResult(value: any) {
+      let result = parseInt(value.result);
+      let amount = parseInt(value.amount);
+      if (result == 0) {
+        alert("成功探索到了资源：" + amount)
+      } else if (result == 1) {
+        if (amount == 0) {
+          alert("意外遭遇了海盗，战斗失败，获得资源：0");
+        } else {
+          alert("意外遭遇了海盗，战斗胜利，获得资源：" + amount);
+        }
+      } else {
+        alert("成功探索发现小行星，小行星上存在大量资源！！！资源：" + amount)
+      }
+    }
   }
 
   async getAddress(): Promise<string> {
@@ -51,7 +71,7 @@ export class WalletService {
     return addrs[0]
   }
 
-  async getBalance():Promise<string>{
+  async getBalance(): Promise<string> {
     let addr = await this.getAddress();
     let balance = await this.web3.eth.getBalance(addr);
     return balance

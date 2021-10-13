@@ -1,1 +1,16 @@
-<p>page-adventure works!</p>
+
+<h1>Adventure</h1>
+
+<p>正在探索冒险的舰队：</p>
+<div *ngFor="let item of fleets;let key=index;" >
+  <div *ngIf="item.status==8">
+    <p>第{{key}}舰队</p>
+    <p>状态：{{item.status}}---正在探索冒险</p>
+    <p>资源：{{item.asset.gold}}</p>
+    <button (click)="endAdventure(key)">结束冒险</button>
+    <hr>
+  </div>
+</div>
+
+
+

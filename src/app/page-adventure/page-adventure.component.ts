@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WalletService} from "../service/wallet.service";
 
 @Component({
@@ -8,10 +8,26 @@ import {WalletService} from "../service/wallet.service";
 })
 export class PageAdventureComponent implements OnInit {
 
-  constructor(private walletService:WalletService) { }
+  addr: any
+  fleets: any
+
+  constructor(private walletService: WalletService) {
+
+  }
 
   ngOnInit(): void {
-    this
+    this.refresh()
+  }
+
+  async refresh() {
+    this.addr = await this.walletService.getAddress()
+    this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
+  }
+
+  endAdventure(index: number) {
+    this.walletService.homeContract.methods.endAdventure(index).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
   }
 
 }
