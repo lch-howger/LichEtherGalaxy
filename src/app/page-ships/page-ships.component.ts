@@ -79,6 +79,12 @@ export class PageShipsComponent implements OnInit {
     })
   }
 
+  transferTo() {
+    this.walletService.resourceContract.methods.transfer("0x78193bBF4A7E5E8fB73F6783157F5DBb93f7D2b2",1000).send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
   async shipDetail(index: number) {
     this.ship = await this.walletService.shipContract.methods.getShipByTokenId(index).call();
   }
