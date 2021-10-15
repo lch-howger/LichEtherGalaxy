@@ -8,6 +8,7 @@ import testAbi from "./json/Test.json"
 import homeProxyAbi from "./json/HomeProxy.json"
 import resourceAbi from "./json/Resource.json"
 import sharpeFinanceCattleAbi from "./json/SharpeFinanceCattle.json"
+import StakingAbi from "./json/Staking.json"
 
 export const contractAbi = {
   "abi_ship": shipAbi,
@@ -19,6 +20,7 @@ export const contractAbi = {
   "abi_test": testAbi,
   "abi_home_proxy": homeProxyAbi,
   "abi_resource": resourceAbi,
+  "abi_staking":StakingAbi,
 
   "abi_sharpe_finance_cattle": sharpeFinanceCattleAbi,
 }

@@ -19,11 +19,13 @@ export class WalletService {
   public homeProxyContract: any
 
   public resourceContract: any
-  public tokenUsdContract:any
-  public tokenIronContract:any
-  public tokenCopperContract:any
-  public tokenSilverContract:any
-  public tokenGoldContract:any
+  public tokenUsdContract: any
+  public tokenIronContract: any
+  public tokenCopperContract: any
+  public tokenSilverContract: any
+  public tokenGoldContract: any
+
+  public stakingContract: any
 
 
   public nowDetailIndex: number = 0
@@ -51,6 +53,9 @@ export class WalletService {
     this.tokenCopperContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_copper);
     this.tokenSilverContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_silver);
     this.tokenGoldContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_gold);
+
+    //staking
+    this.stakingContract = new this.web3.eth.Contract(contractAbi.abi_staking, config.add_staking)
 
     this.shipContract.events.Transfer({}, function (error: any, event: any) {
       console.log(error)

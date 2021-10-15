@@ -17,6 +17,11 @@ export class PageStakingComponent implements OnInit {
   balanceSilver: any
   balanceGold: any
 
+  depositedUserInfo: any
+  depositedAmount: any
+  depositedReward: any
+  inputUsd: any
+
   constructor(private walletService: WalletService) {
 
   }
@@ -33,6 +38,25 @@ export class PageStakingComponent implements OnInit {
     this.balanceCopper = await this.walletService.tokenCopperContract.methods.balanceOf(this.addr).call()
     this.balanceSilver = await this.walletService.tokenSilverContract.methods.balanceOf(this.addr).call()
     this.balanceGold = await this.walletService.tokenGoldContract.methods.balanceOf(this.addr).call()
+
+    this.depositedUserInfo = await this.walletService.stakingContract.methods.userInfo(0, this.addr).call();
+    this.depositedAmount = this.depositedUserInfo.amount;
+    this.depositedReward = this.depositedUserInfo.rewardDebt;
   }
 
+  getUsd() {
+    alert("请联系管理员浩哥")
+  }
+
+  deposit() {
+    this.walletService.stakingContract.methods.deposit(0, this.inputUsd).send({from: this.addr}).then(()=>{
+      this.refresh()
+    })
+  }
+
+  withdraw() {
+    this.walletService.stakingContract.methods.withdraw(0, this.inputUsd).send({from: this.addr}).then(()=>{
+      this.refresh()
+    })
+  }
 }

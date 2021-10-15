@@ -1,6 +1,18 @@
 
 <p>我的LightYear USD 余额: {{balanceUsd}}</p>
 
+<button (click)="getUsd()">免费获取LightYear USD</button>
+<br>
+<input type="text" [(ngModel)]="inputUsd">
+<button (click)="deposit()">质押USD</button>
+
+<p>我已经质押了 : {{depositedAmount}}</p>
+<p>预计收益 : {{depositedReward}}</p>
+<hr>
+<input type="text" [(ngModel)]="inputUsd">
+<button (click)="withdraw()">提取USD</button>
+
+<hr>
 <p>质押LightYear USD可以获取以下5种资源</p>
 
 <p>我的 resource : {{balanceResource}}</p>
