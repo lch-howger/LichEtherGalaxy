@@ -29,7 +29,6 @@ export class PageExploreComponent implements OnInit {
     this.nowTime = Math.floor(Date.now()/1000)
     this.nowTimeString = new Date().toLocaleString()
     this.addr = await this.walletService.getAddress();
-    this.balance = await this.walletService.raresContract.methods.balanceOf(this.addr).call();
     this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call();
     this.testArray = Object.assign([], this.testArray);
     for (let i = 0; i < this.fleets.length; i++) {

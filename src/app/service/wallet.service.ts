@@ -14,7 +14,6 @@ export class WalletService {
   public heroContract: any
   public shipContract: any
   public homeContract: any
-  public raresContract: any
   public battleContract: any
   public testContract: any
   public homeProxyContract: any
@@ -34,7 +33,6 @@ export class WalletService {
     this.heroContract = new this.web3.eth.Contract(contractAbi.abi_hero, config.addr_hero);
     this.shipContract = new this.web3.eth.Contract(contractAbi.abi_ship, config.addr_ship);
     this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home_proxy);
-    this.raresContract = new this.web3.eth.Contract(contractAbi.abi_rares, config.addr_rares);
     this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
     this.testContract = new this.web3.eth.Contract(contractAbi.abi_test, config.addr_test);
     this.resourceContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_resource);
