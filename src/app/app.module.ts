@@ -20,6 +20,7 @@ import { PageWelcomeComponent } from './page-welcome/page-welcome.component';
 import { PageRankingComponent } from './page-ranking/page-ranking.component';
 import { PageMarketComponent } from './page-market/page-market.component';
 import { PageAdventureComponent } from './page-adventure/page-adventure.component';
+import { PageStakingComponent } from './page-staking/page-staking.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PageAdventureComponent } from './page-adventure/page-adventure.componen
     PageWelcomeComponent,
     PageRankingComponent,
     PageMarketComponent,
-    PageAdventureComponent
+    PageAdventureComponent,
+    PageStakingComponent
   ],
     imports: [
         BrowserModule,
