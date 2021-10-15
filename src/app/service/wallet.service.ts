@@ -17,7 +17,14 @@ export class WalletService {
   public battleContract: any
   public testContract: any
   public homeProxyContract: any
+
   public resourceContract: any
+  public tokenUsdContract:any
+  public tokenIronContract:any
+  public tokenCopperContract:any
+  public tokenSilverContract:any
+  public tokenGoldContract:any
+
 
   public nowDetailIndex: number = 0
 
@@ -35,8 +42,15 @@ export class WalletService {
     this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home_proxy);
     this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
     this.testContract = new this.web3.eth.Contract(contractAbi.abi_test, config.addr_test);
-    this.resourceContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_resource);
     this.homeProxyContract = new this.web3.eth.Contract(contractAbi.abi_home_proxy, config.addr_home_proxy);
+
+    //erc20
+    this.resourceContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_resource);
+    this.tokenUsdContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_usd);
+    this.tokenIronContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_iron);
+    this.tokenCopperContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_copper);
+    this.tokenSilverContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_silver);
+    this.tokenGoldContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_gold);
 
     this.shipContract.events.Transfer({}, function (error: any, event: any) {
       console.log(error)
