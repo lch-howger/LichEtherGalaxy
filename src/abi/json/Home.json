@@ -724,6 +724,13 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "payResource",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",

@@ -1,21 +1,21 @@
 export const config = {
 
   //local
-  addr_registry: "0x58968b6994b25f407D6B194D4619EBe42CE64efa",
-  addr_ship: "0x2d787d46f3f93F7391182dA1b97BaDc169FA61C6",
-  addr_hero: "0x04b27a520719579955d8A8faF1b4AD8E8E09C997",
-  addr_rares: "0xd5C2c2bfB153cA2d14cFe5Fe21256d72d2302D5C",
-  addr_resource: "0x90A4ba759b82914A190F0acd6a87CfA354BAa334",
-  //addr_home: "0xcC7510299217dDB47D2e53EaB0d50d3a07010fD3",
-  addr_battle: "0xD310c4638b57f881f66350832c320F426dCE29E3",
-  addr_home_proxy: "0x2Cd94b3512f342E9Dd2CF4b685de9F12C192eA38",
+  addr_registry: "0x432690F169dC8eE25903526c66857B8d9fBF50BD",
+  addr_ship: "0x9da1D7c07Ba02512643aaf70a8E3F3320A326025",
+  addr_hero: "0x790124b391F4924d2497A8251A14486C9993Fcd1",
+  addr_rares: "0xC665D13434036eFa7Acc8C169ED037003cc746E4",
+  addr_resource: "0xe66395fE8293231CB47813610Bf7E6679655Ef11",
+  //addr_home: "0x7b69D2760fDF41549De4054fdB103fd2AB64d1BF",
+  addr_battle: "0xD553e10e3751d70C0d6b98f28824d3DDa322Ce8d",
+  addr_home_proxy: "0x1c78e0aac71E59C6b7740a9eA68AFF3d083e01Ed",
 
-  addr_token_iron: "0x35a4B78d444a6cD34440c19B4865CC6ac540fA49",
-  addr_token_copper: "0xCc84c87Bb1e4EAfb6b8Dbde9e3b21c9b21139c82",
-  addr_token_silver: "0xE4109069b04821f7BCAdCDd386Ef5cC2ac0b6b47",
-  addr_token_gold: "0xec3D8d6FE5D674EA7C6ac53594B2a6007cfCcbbD",
-  add_staking:"0xe18DC55CeF8730a5cE99aC7911bE50fc774af899",
-  addr_token_usd: "0x37cdBE316eeF17a6E3Cde4B80307b8f2604441C8",
+  addr_token_iron: "0x647E930A02686ca57f67E3e5b280b7a7f4A01E7f",
+  addr_token_copper: "0x892F0c292965D0f6d37aE6A891b10231f40AC5Db",
+  addr_token_silver: "0xD586A5E1b7dE8fAd482141afF78cDd7c650A28ca",
+  addr_token_gold: "0x321Ba10F7b161B38428CaDe2CB5F3134c3182c74",
+  add_staking:"0xc361FE7D935a2F0cC60997970C716D5f0186389e",
+  addr_token_usd: "0x23aC6b4d7730800EF5939C5661936a4560BfE6BB",
 
 
   // //bsc

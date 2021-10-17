@@ -59,4 +59,10 @@ export class PageStakingComponent implements OnInit {
       this.refresh()
     })
   }
+
+  payResource() {
+    this.walletService.homeContract.methods.payResource().send({from: this.addr}).then(()=>{
+      this.refresh()
+    })
+  }
 }
