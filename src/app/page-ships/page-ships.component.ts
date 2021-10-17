@@ -20,7 +20,7 @@ export class PageShipsComponent implements OnInit {
   shipAttackArray: number[] = []
   heroIdArray: number[] = []
   heroAttackArray: number[] = []
-  resourceBalance:any
+  resourceBalance: any
 
   constructor(private walletService: WalletService) {
   }
@@ -37,7 +37,7 @@ export class PageShipsComponent implements OnInit {
     this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
     this.fleetsSize = this.fleets.length
 
-    this.fleetNumberArray=[]
+    this.fleetNumberArray = []
     for (let i = 0; i < this.fleetsSize; i++) {
       this.fleetNumberArray.push(i)
     }
@@ -52,12 +52,12 @@ export class PageShipsComponent implements OnInit {
     for (let i = 0; i < this.shipIdArray.length; i++) {
       let tokenId = this.shipIdArray[i]
       let heroId = await this.walletService.homeContract.methods.shipHeroMap(tokenId).call();
-      let hero=await this.walletService.heroContract.methods.getHeroByTokenId(heroId).call();
+      let hero = await this.walletService.heroContract.methods.getHeroByTokenId(heroId).call();
       this.heroIdArray.push(heroId);
       this.heroAttackArray.push(hero.attack);
     }
 
-    this.resourceBalance=await this.walletService.resourceContract.methods.balanceOf(this.addr).call();
+    this.resourceBalance = await this.walletService.resourceContract.methods.balanceOf(this.addr).call();
   }
 
   mintShip() {
@@ -76,13 +76,13 @@ export class PageShipsComponent implements OnInit {
   }
 
   quickMint() {
-    this.walletService.resourceContract.methods.mint(this.addr,10000).send({from: this.addr}).then(() => {
+    this.walletService.resourceContract.methods.mint(this.addr, 10000).send({from: this.addr}).then(() => {
       this.refresh()
     })
   }
 
   transferTo() {
-    this.walletService.resourceContract.methods.transfer("0x78193bBF4A7E5E8fB73F6783157F5DBb93f7D2b2",1000).send({from: this.addr}).then(() => {
+    this.walletService.resourceContract.methods.transfer("0x78193bBF4A7E5E8fB73F6783157F5DBb93f7D2b2", 1000).send({from: this.addr}).then(() => {
       this.refresh()
     })
   }
@@ -95,4 +95,8 @@ export class PageShipsComponent implements OnInit {
     this.walletService.homeContract.methods.operateFleetShip(tokenId, fleetIndex).send({from: this.addr});
   }
 
+  getTotalAttack(key: number) {
+    let a = parseInt(String(this.shipAttackArray[key])) + parseInt(String(this.heroAttackArray[key]))
+    return a
+  }
 }
