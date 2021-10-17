@@ -38,7 +38,6 @@ export class PageMainComponent implements OnInit {
     this.heroAddr = await this.walletService.registryContract.methods.hero().call()
     this.homeAddr = await this.walletService.registryContract.methods.home().call()
     this.battleAddr = await this.walletService.registryContract.methods.battle().call()
-    this.raresAddr = await this.walletService.registryContract.methods.rares().call()
     this.param = {from: this.addr}
 
     let balanceString = await this.walletService.getBalance();
