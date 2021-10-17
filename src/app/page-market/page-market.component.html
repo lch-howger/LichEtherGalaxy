@@ -1,8 +1,14 @@
 <div class="div_all">
-  <span>ERC20地址：</span> <a href="{{erc20address}}" target="_blank">{{erc20address}}</a>
+  <span>Iron地址：</span> <a href="{{addrTokenIron}}" target="_blank">{{addrTokenIron}}</a><br>
+  <span>Copper地址：</span> <a href="{{addrTokenCopper}}" target="_blank">{{addrTokenCopper}}</a><br>
+  <span>Silver地址：</span> <a href="{{addrTokenSilver}}" target="_blank">{{addrTokenSilver}}</a><br>
+  <span>Gold地址：</span> <a href="{{addrTokenGold}}" target="_blank">{{addrTokenGold}}</a><br>
   <br>
   <br>
-  <p>我的宇宙现金：{{balance}}</p>
+  <p>我的Iron：{{balanceIron}}</p>
+  <p>我的Copper：{{balanceCopper}}</p>
+  <p>我的Silver：{{balanceSilver}}</p>
+  <p>我的Gold：{{balanceGold}}</p>
   <br>
   <br>
   <p>在交易所的舰队：</p>
@@ -14,8 +20,11 @@
       <p>第{{key}}舰队</p>
       <p>状态：{{item.status}},在交易所</p>
       <p>航行：{{timestamp() >= item.missionEndTime ? "已经到达交易所" : "正在往交易所航行"}}</p>
-      <p>装载资源：{{item.asset.gold}}</p>
-      <button (click)="sellResource(key)">卖掉资源变成宇宙现金</button>
+      <p>装载资源Iron：{{item.asset.iron}}</p>
+      <p>装载资源Copper：{{item.asset.copper}}</p>
+      <p>装载资源Silver：{{item.asset.silver}}</p>
+      <p>装载资源Gold：{{item.asset.gold}}</p>
+      <button (click)="sellResource(key)">把舰队所有资源卖掉变成资源token</button>
       <button (click)="goHome(key)">回家</button>
       <hr>
     </div>

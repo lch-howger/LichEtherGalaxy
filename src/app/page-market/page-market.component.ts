@@ -9,13 +9,22 @@ import {WalletService} from "../service/wallet.service";
 export class PageMarketComponent implements OnInit {
 
   addr: any
-  balance: any
   fleets: any
-  erc20address: any
   rankingList: any
+  addrTokenIron:any
+  addrTokenCopper:any
+  addrTokenSilver:any
+  addrTokenGold:any
+  balanceIron:any
+  balanceCopper:any
+  balanceSilver:any
+  balanceGold:any
 
   constructor(private walletService: WalletService) {
-    this.erc20address = "https://testnet.bscscan.com/address/" + this.walletService.resourceContract._address
+    this.addrTokenIron = "https://testnet.bscscan.com/address/" + this.walletService.tokenIronContract._address
+    this.addrTokenCopper = "https://testnet.bscscan.com/address/" + this.walletService.tokenCopperContract._address
+    this.addrTokenSilver = "https://testnet.bscscan.com/address/" + this.walletService.tokenSilverContract._address
+    this.addrTokenGold = "https://testnet.bscscan.com/address/" + this.walletService.tokenGoldContract._address
 
   }
 
@@ -25,7 +34,12 @@ export class PageMarketComponent implements OnInit {
 
   async refresh() {
     this.addr = await this.walletService.getAddress()
-    this.balance = await this.walletService.resourceContract.methods.balanceOf(this.addr).call()
+
+    this.balanceIron = await this.walletService.tokenIronContract.methods.balanceOf(this.addr).call()
+    this.balanceCopper = await this.walletService.tokenCopperContract.methods.balanceOf(this.addr).call()
+    this.balanceSilver = await this.walletService.tokenSilverContract.methods.balanceOf(this.addr).call()
+    this.balanceGold = await this.walletService.tokenGoldContract.methods.balanceOf(this.addr).call()
+
     this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
 
     let userList = await this.walletService.homeContract.methods.getUserList().call();
