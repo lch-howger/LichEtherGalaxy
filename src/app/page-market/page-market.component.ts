@@ -46,7 +46,7 @@ export class PageMarketComponent implements OnInit {
     console.log(userList)
     let list = []
     for (let i = 0; i < userList.length; i++) {
-      let balance = await this.walletService.resourceContract.methods.balanceOf(userList[i]).call()
+      let balance = await this.walletService.tokenGoldContract.methods.balanceOf(userList[i]).call()
       let item = {
         addr: userList[i],
         balance: balance
