@@ -36,6 +36,8 @@ export class PageShipsComponent implements OnInit {
 
     this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
     this.fleetsSize = this.fleets.length
+
+    this.fleetNumberArray=[]
     for (let i = 0; i < this.fleetsSize; i++) {
       this.fleetNumberArray.push(i)
     }
@@ -59,7 +61,7 @@ export class PageShipsComponent implements OnInit {
   }
 
   mintShip() {
-    this.walletService.shipContract.methods.mintShip().send({
+    this.walletService.shipContract.methods.mintShip(this.addr).send({
       from: this.addr,
       gas: 400000,
     }).then(() => {
