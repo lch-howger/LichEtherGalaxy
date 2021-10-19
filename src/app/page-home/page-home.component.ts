@@ -18,6 +18,7 @@ export class PageHomeComponent implements OnInit {
   fleets: any
   shipIdArray: any
   freeShipArray: string[] = []
+  inputResource:number=0
 
   constructor(private walletService: WalletService) {
   }
@@ -54,5 +55,11 @@ export class PageHomeComponent implements OnInit {
   }
 
   test() {
+  }
+
+  addResource() {
+    this.walletService.homeContract.methods.addAssets(this.inputResource).send({from:this.addr}).then(()=>{
+      this.refresh()
+    })
   }
 }
