@@ -1,5 +1,21 @@
 [
   {
+    "inputs": [
+      {
+        "internalType": "contract Resource",
+        "name": "_sushi",
+        "type": "address"
+      },
+      {
+        "internalType": "contract Registry",
+        "name": "_registry",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -148,144 +164,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "massUpdatePools",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bool",
-        "name": "_withUpdate",
-        "type": "bool"
-      }
-    ],
-    "name": "set",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "contract Resource",
-        "name": "_iron",
-        "type": "address"
-      },
-      {
-        "internalType": "contract Resource",
-        "name": "_copper",
-        "type": "address"
-      },
-      {
-        "internalType": "contract Resource",
-        "name": "_silver",
-        "type": "address"
-      },
-      {
-        "internalType": "contract Resource",
-        "name": "_gold",
-        "type": "address"
-      }
-    ],
-    "name": "setTokens",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      }
-    ],
-    "name": "updatePool",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdraw",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "contract Resource",
-        "name": "_sushi",
-        "type": "address"
-      },
-      {
-        "internalType": "contract Registry",
-        "name": "_registry",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "inputs": [],
-    "name": "copper",
-    "outputs": [
-      {
-        "internalType": "contract Resource",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -311,28 +189,9 @@
   },
   {
     "inputs": [],
-    "name": "gold",
-    "outputs": [
-      {
-        "internalType": "contract Resource",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "iron",
-    "outputs": [
-      {
-        "internalType": "contract Resource",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
+    "name": "massUpdatePools",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -410,15 +269,32 @@
   },
   {
     "inputs": [],
-    "name": "silver",
-    "outputs": [
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
       {
-        "internalType": "contract Resource",
-        "name": "",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_allocPoint",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_withUpdate",
+        "type": "bool"
       }
     ],
-    "stateMutability": "view",
+    "name": "set",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -476,6 +352,32 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      }
+    ],
+    "name": "updatePool",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
@@ -500,6 +402,24 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_pid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
