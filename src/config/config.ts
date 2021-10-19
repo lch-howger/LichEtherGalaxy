@@ -14,7 +14,7 @@ export const config = {
   addr_token_copper: "0xBf07b20FDC143dd38ca56801214124073478cA45",
   addr_token_silver: "0x28911916709BabeA318eD27443782717ECfa111b",
   addr_token_gold: "0x3d5B5D58378277C0E5C397771C714F6DB104Cd19",
-  add_staking:"0xbd9b76Be2f8B9C4D23A0331D1fA0233a7BF04552",
+  add_staking:"0x636B1a907CDbEc6eC98363f3A32304f660e19dda",
   addr_token_usd: "0x6406E980d29aB2026A577004CB98B3A78A72De1d",
 
 

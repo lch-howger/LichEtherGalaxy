@@ -22,6 +22,8 @@ export class PageStakingComponent implements OnInit {
   depositedReward: any
   inputUsd: any
 
+  asset:any
+
   constructor(private walletService: WalletService) {
 
   }
@@ -42,6 +44,8 @@ export class PageStakingComponent implements OnInit {
     this.depositedUserInfo = await this.walletService.stakingContract.methods.userInfo(0, this.addr).call();
     this.depositedAmount = this.depositedUserInfo.amount;
     this.depositedReward = this.depositedUserInfo.rewardDebt;
+
+    this.asset = await this.walletService.homeContract.methods.ownerAssetMap(this.addr).call()
   }
 
   getUsd() {
