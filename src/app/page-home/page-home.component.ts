@@ -58,7 +58,13 @@ export class PageHomeComponent implements OnInit {
   }
 
   addResource() {
-    this.walletService.homeContract.methods.addAssets(this.inputResource).send({from:this.addr}).then(()=>{
+    this.walletService.homeContract.methods.addAssets(this.addr,this.inputResource).send({from:this.addr}).then(()=>{
+      this.refresh()
+    })
+  }
+
+  upgradeHome() {
+    this.walletService.homeContract.methods.upgradeHome().send({from:this.addr}).then(()=>{
       this.refresh()
     })
   }

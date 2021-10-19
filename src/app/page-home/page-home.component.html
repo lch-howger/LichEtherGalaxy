@@ -15,8 +15,11 @@
 <br>
 <br>
 
-<input type="text" [(ngModel)]="inputResource">
-<button (click)="addResource()">添加资源</button>
+<!--<input type="text" [(ngModel)]="inputResource">-->
+<!--<button (click)="addResource()">添加资源</button>-->
+<p>基地等级：{{userInfo.homeLevel}}</p>
+<button (click)="upgradeHome()">升级基地（每种资源消耗100）</button>
+<br>
 <p>基地资源：</p>
 <p>gold: {{asset.gold}}</p>
 <p>silver: {{asset.silver}}</p>

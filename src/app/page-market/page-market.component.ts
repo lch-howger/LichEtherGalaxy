@@ -15,6 +15,7 @@ export class PageMarketComponent implements OnInit {
   addrTokenCopper:any
   addrTokenSilver:any
   addrTokenGold:any
+  balanceResource:any
   balanceIron:any
   balanceCopper:any
   balanceSilver:any
@@ -35,6 +36,7 @@ export class PageMarketComponent implements OnInit {
   async refresh() {
     this.addr = await this.walletService.getAddress()
 
+    this.balanceResource = await this.walletService.resourceContract.methods.balanceOf(this.addr).call()
     this.balanceIron = await this.walletService.tokenIronContract.methods.balanceOf(this.addr).call()
     this.balanceCopper = await this.walletService.tokenCopperContract.methods.balanceOf(this.addr).call()
     this.balanceSilver = await this.walletService.tokenSilverContract.methods.balanceOf(this.addr).call()
