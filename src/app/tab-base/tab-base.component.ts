@@ -9,8 +9,9 @@ import {WalletService} from "../service/wallet.service";
 export class TabBaseComponent implements OnInit {
 
   addr: any
-  asset:any
-  userInfo:any
+  asset: any = []
+  userInfo: any = []
+  fleets: any = []
 
   constructor(private walletService: WalletService) {
 
@@ -24,6 +25,8 @@ export class TabBaseComponent implements OnInit {
     this.addr = await this.walletService.getAddress()
     this.asset = await this.walletService.homeContract.methods.ownerAssetMap(this.addr).call()
     this.userInfo = await this.walletService.homeContract.methods.ownerUserInfoMap(this.addr).call();
+    this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
+    console.log(this.userInfo)
   }
 
 }
