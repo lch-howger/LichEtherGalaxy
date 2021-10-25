@@ -14,11 +14,13 @@ import {PageAdventureComponent} from "./page-adventure/page-adventure.component"
 import {PageStakingComponent} from "./page-staking/page-staking.component";
 import {TabBaseComponent} from "./tab-base/tab-base.component";
 import {TabFleetsComponent} from "./tab-fleets/tab-fleets.component";
+import {TabCreateComponent} from "./tab-create/tab-create.component";
 
 const routes: Routes = [
   {path: '', component: PageMainComponent},
   {path: 'tab-base', component: TabBaseComponent},
   {path: 'tab-fleets', component: TabFleetsComponent},
+  {path: 'tab-create', component: TabCreateComponent},
   {path: 'fleets', component: PageFleetsComponent},
   {path: 'ships', component: PageShipsComponent},
   {path: 'heroes', component: PageHeroesComponent},
