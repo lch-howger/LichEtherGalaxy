@@ -2,8 +2,10 @@
 
 <div *ngFor="let item of tokenList;let key=index;">
   <p>{{item}}</p>
-  <p>balance: {{balanceList[key]}}</p>
-  <button>Stake</button>
+  <p>My Balance: {{balanceList[key]}}</p>
+  <p>My Locked Amount: {{lockedList[key]}}</p>
+  <input type="text" [(ngModel)]="inputList[key]">
+  <button (click)="stake(key)">Stake</button>
   <button>Unstake</button>
   <hr>
 </div>
