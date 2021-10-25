@@ -12,6 +12,7 @@ export class TabBaseComponent implements OnInit {
   asset: any = []
   userInfo: any = []
   fleets: any = []
+  power: any
 
   constructor(private walletService: WalletService) {
 
@@ -26,7 +27,10 @@ export class TabBaseComponent implements OnInit {
     this.asset = await this.walletService.homeContract.methods.ownerAssetMap(this.addr).call()
     this.userInfo = await this.walletService.homeContract.methods.ownerUserInfoMap(this.addr).call();
     this.fleets = await this.walletService.homeContract.methods.getFleets(this.addr).call()
-    console.log(this.userInfo)
+
+    let l01 = await this.walletService.stakingContract.methods.userInfo(0, this.addr).call()
+    let l02 = await this.walletService.stakingContract.methods.userInfo(1, this.addr).call()
+    this.power = "(" + l01.amount + " + " + l02.amount + ")"
   }
 
 }
