@@ -10,6 +10,7 @@ export class TabBaseComponent implements OnInit {
 
   addr: any
   asset:any
+  userInfo:any
 
   constructor(private walletService: WalletService) {
 
@@ -22,6 +23,7 @@ export class TabBaseComponent implements OnInit {
   async refresh() {
     this.addr = await this.walletService.getAddress()
     this.asset = await this.walletService.homeContract.methods.ownerAssetMap(this.addr).call()
+    this.userInfo = await this.walletService.homeContract.methods.ownerUserInfoMap(this.addr).call();
   }
 
 }
