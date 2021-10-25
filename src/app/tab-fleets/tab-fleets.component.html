@@ -1,8 +1,15 @@
 <h1>Fleets</h1>
 
 <mat-tab-group mat-align-tabs="start" [(selectedIndex)]="nowTab">
-  <mat-tab *ngFor="let item of fleets;let key=index;" label="Fleet #{{key+1}}">
-    <div>afdsj</div>
+  <mat-tab *ngFor="let fleet of fleets;let key=index;" label="Fleet #{{key+1}}">
+    <div>
+      <p>Ships: {{fleet[4]}}</p>
+      <p>Status: {{getStatusString(fleet[0])}}</p>
+      <p>From: </p>
+      <p>To: </p>
+      <p>Spent: </p>
+      <p>Left: </p>
+    </div>
     <button>Change Command</button>
     <br>
     <button>Fleet Formation</button>

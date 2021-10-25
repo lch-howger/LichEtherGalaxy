@@ -24,3 +24,26 @@ export function getFleetStatusString(key: any) {
   }
   return ""
 }
+
+export function getFleetStatusStringEnglish(key: any) {
+  let num: number = +key;
+  switch (num) {
+    case FleetStatus.Home:
+      return num+"-Home"
+    case FleetStatus.Guard:
+      return num+"-Guarding"
+    case FleetStatus.BattleGo:
+      return num+"-Go Battle"
+    case FleetStatus.Damaged:
+      return num+"-Damaged"
+    case FleetStatus.Explore:
+      return num+"-Exploring"
+    case FleetStatus.ExploreGo:
+      return num+"-Go Explore"
+    case FleetStatus.Back:
+      return num+"-Back Home"
+    case FleetStatus.Market:
+      return num+"-Market"
+  }
+  return ""
+}

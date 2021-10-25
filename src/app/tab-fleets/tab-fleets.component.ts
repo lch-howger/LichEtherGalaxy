@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WalletService} from "../service/wallet.service";
+import {getFleetStatusString, getFleetStatusStringEnglish} from "../page-fleets/fleet-status";
 
 @Component({
   selector: 'app-tab-fleets',
@@ -33,4 +34,7 @@ export class TabFleetsComponent implements OnInit {
     })
   }
 
+  getStatusString(key: any) {
+    return getFleetStatusStringEnglish(key)
+  }
 }
