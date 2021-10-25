@@ -21,6 +21,7 @@ import { PageRankingComponent } from './page-ranking/page-ranking.component';
 import { PageMarketComponent } from './page-market/page-market.component';
 import { PageAdventureComponent } from './page-adventure/page-adventure.component';
 import { PageStakingComponent } from './page-staking/page-staking.component';
+import { TabBaseComponent } from './tab-base/tab-base.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PageStakingComponent } from './page-staking/page-staking.component';
     PageRankingComponent,
     PageMarketComponent,
     PageAdventureComponent,
-    PageStakingComponent
+    PageStakingComponent,
+    TabBaseComponent
   ],
     imports: [
         BrowserModule,
