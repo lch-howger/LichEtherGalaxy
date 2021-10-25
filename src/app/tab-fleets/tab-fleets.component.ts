@@ -27,4 +27,10 @@ export class TabFleetsComponent implements OnInit {
     this.loaded = true
   }
 
+  createFleet() {
+    this.walletService.homeContract.methods.createFleet().send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
+
 }
