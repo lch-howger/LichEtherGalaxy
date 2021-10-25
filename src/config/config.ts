@@ -17,6 +17,9 @@ export const config = {
   add_staking:"0x3ec4Bd0b062E2248f9B8465885B83bCe9561499e",
   addr_token_usd: "0x844B461694002f1a783290765B627917281A2bA2",
 
+  //lp tokens
+  addr_lp_token01:"0x844B461694002f1a783290765B627917281A2bA2",
+  addr_lp_token02:"0xd4643C1173C81Bf8ECB0eD9A03af9Cf321931a49",
 
   // //bsc
   // addr_registry: "0xAC6aFf5DdbA13fcb188c1E20B722908C3F7D45be",

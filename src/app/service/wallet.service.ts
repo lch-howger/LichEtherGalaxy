@@ -26,7 +26,8 @@ export class WalletService {
   public tokenGoldContract: any
 
   public stakingContract: any
-
+  public lpToken01Contract: any
+  public lpToken02Contract: any
 
   public nowDetailIndex: number = 0
 
@@ -56,6 +57,8 @@ export class WalletService {
 
     //staking
     this.stakingContract = new this.web3.eth.Contract(contractAbi.abi_staking, config.add_staking)
+    this.lpToken01Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_lp_token01)
+    this.lpToken02Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_lp_token02)
 
     this.shipContract.events.Transfer({}, function (error: any, event: any) {
       console.log(error)
