@@ -22,4 +22,9 @@ export class TabCreateComponent implements OnInit {
     this.addr = await this.walletService.getAddress()
   }
 
+  buildShip() {
+    this.walletService.homeContract.methods.buildShip().send({from: this.addr}).then(() => {
+      this.refresh()
+    })
+  }
 }
