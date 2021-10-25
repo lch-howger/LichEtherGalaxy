@@ -16,6 +16,7 @@ import {TabBaseComponent} from "./tab-base/tab-base.component";
 import {TabFleetsComponent} from "./tab-fleets/tab-fleets.component";
 import {TabCreateComponent} from "./tab-create/tab-create.component";
 import {TabStakingComponent} from "./tab-staking/tab-staking.component";
+import {TabMarketComponent} from "./tab-market/tab-market.component";
 
 const routes: Routes = [
   {path: '', component: PageMainComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'tab-fleets', component: TabFleetsComponent},
   {path: 'tab-create', component: TabCreateComponent},
   {path: 'tab-staking', component: TabStakingComponent},
+  {path: 'tab-market', component: TabMarketComponent},
   {path: 'fleets', component: PageFleetsComponent},
   {path: 'ships', component: PageShipsComponent},
   {path: 'heroes', component: PageHeroesComponent},

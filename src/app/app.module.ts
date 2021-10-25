@@ -25,6 +25,7 @@ import { TabBaseComponent } from './tab-base/tab-base.component';
 import { TabFleetsComponent } from './tab-fleets/tab-fleets.component';
 import { TabCreateComponent } from './tab-create/tab-create.component';
 import { TabStakingComponent } from './tab-staking/tab-staking.component';
+import { TabMarketComponent } from './tab-market/tab-market.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TabStakingComponent } from './tab-staking/tab-staking.component';
     TabBaseComponent,
     TabFleetsComponent,
     TabCreateComponent,
-    TabStakingComponent
+    TabStakingComponent,
+    TabMarketComponent
   ],
     imports: [
         BrowserModule,
