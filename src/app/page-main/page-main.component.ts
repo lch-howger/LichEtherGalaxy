@@ -13,7 +13,6 @@ import {addWarning} from "@angular-devkit/build-angular/src/utils/webpack-diagno
 export class PageMainComponent implements OnInit {
 
   public addr: string = ""
-  public registryAddr: string = ""
   public shipAddr: string = ""
   public heroAddr: string = ""
   public homeAddr: string = ""
@@ -33,7 +32,6 @@ export class PageMainComponent implements OnInit {
 
   async refresh() {
     this.addr = await this.walletService.getAddress()
-    this.registryAddr = config.addr_registry;
     this.shipAddr = await this.walletService.registryContract.methods.ship().call()
     this.heroAddr = await this.walletService.registryContract.methods.hero().call()
     this.homeAddr = await this.walletService.registryContract.methods.home().call()

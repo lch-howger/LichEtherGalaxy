@@ -39,26 +39,25 @@ export class WalletService {
     })
 
     //contract
-    this.registryContract = new this.web3.eth.Contract(contractAbi.abi_registry, config.addr_registry);
-    this.heroContract = new this.web3.eth.Contract(contractAbi.abi_hero, config.addr_hero);
-    this.shipContract = new this.web3.eth.Contract(contractAbi.abi_ship, config.addr_ship);
-    this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.addr_home_proxy);
-    this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.addr_battle);
-    this.testContract = new this.web3.eth.Contract(contractAbi.abi_test, config.addr_test);
-    this.homeProxyContract = new this.web3.eth.Contract(contractAbi.abi_home_proxy, config.addr_home_proxy);
+    this.registryContract = new this.web3.eth.Contract(contractAbi.abi_registry, config.ADDR_REGISTRY);
+    this.heroContract = new this.web3.eth.Contract(contractAbi.abi_hero, config.ADDR_HERO);
+    this.shipContract = new this.web3.eth.Contract(contractAbi.abi_ship, config.ADDR_SHIP);
+    this.homeContract = new this.web3.eth.Contract(contractAbi.abi_home, config.ADDR_HOME_PROXY);
+    this.battleContract = new this.web3.eth.Contract(contractAbi.abi_battle, config.ADDR_BATTLE);
+    this.homeProxyContract = new this.web3.eth.Contract(contractAbi.abi_home_proxy, config.ADDR_HOME_PROXY);
 
     //erc20
-    this.resourceContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_resource);
-    this.tokenUsdContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_usd);
-    this.tokenIronContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_iron);
-    this.tokenCopperContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_copper);
-    this.tokenSilverContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_silver);
-    this.tokenGoldContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_token_gold);
+    this.resourceContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_RESOURCE);
+    this.tokenUsdContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_TOKEN_USD);
+    this.tokenIronContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_TOKEN_IRON);
+    this.tokenCopperContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_TOKEN_CARBON);
+    this.tokenSilverContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_TOKEN_SILICON);
+    this.tokenGoldContract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_TOKEN_GOLD);
 
     //staking
-    this.stakingContract = new this.web3.eth.Contract(contractAbi.abi_staking, config.add_staking)
-    this.lpToken01Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_lp_token01)
-    this.lpToken02Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.addr_lp_token02)
+    this.stakingContract = new this.web3.eth.Contract(contractAbi.abi_staking, config.ADDR_STAKING)
+    this.lpToken01Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_LP_TOKEN01)
+    this.lpToken02Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_LP_TOKEN02)
 
     this.shipContract.events.Transfer({}, function (error: any, event: any) {
       console.log(error)
