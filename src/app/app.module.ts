@@ -28,6 +28,7 @@ import {TabCreateComponent} from './tab-create/tab-create.component';
 import {TabStakingComponent} from './tab-staking/tab-staking.component';
 import {TabMarketComponent} from './tab-market/tab-market.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PageTestComponent } from './page-test/page-test.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     TabFleetsComponent,
     TabCreateComponent,
     TabStakingComponent,
-    TabMarketComponent
+    TabMarketComponent,
+    PageTestComponent
   ],
   imports: [
     BrowserModule,
