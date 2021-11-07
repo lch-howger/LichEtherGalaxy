@@ -17,6 +17,7 @@ import {TabFleetsComponent} from "./tab-fleets/tab-fleets.component";
 import {TabCreateComponent} from "./tab-create/tab-create.component";
 import {TabStakingComponent} from "./tab-staking/tab-staking.component";
 import {TabMarketComponent} from "./tab-market/tab-market.component";
+import {PageTestComponent} from "./page-test/page-test.component";
 
 const routes: Routes = [
   {path: '', component: PageMainComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'market', component: PageMarketComponent},
   {path: 'adventure', component: PageAdventureComponent},
   {path: 'staking', component: PageStakingComponent},
+  {path: 'test', component: PageTestComponent},
   {path: 'detail/:index', component: PageDetailComponent},
   {path: 'battle-detail/:index', component: PageBattleDetailComponent},
 ];
