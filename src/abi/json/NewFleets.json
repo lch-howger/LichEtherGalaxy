@@ -1,0 +1,255 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr_",
+        "type": "address"
+      }
+    ],
+    "name": "createFleet",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fleetIndex_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "shipId_",
+        "type": "uint256"
+      }
+    ],
+    "name": "fleetShipAttach",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fleetIndex_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "shipId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "shipIndex_",
+        "type": "uint256"
+      }
+    ],
+    "name": "fleetShipRemove",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "registry",
+    "outputs": [
+      {
+        "internalType": "contract IRegistry",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "registryAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "shipOwnerMap",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "addr_",
+        "type": "address"
+      }
+    ],
+    "name": "userFleets",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum FleetsStruct.FleetStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "target",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionStartTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "missionEndTime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "shipIdArray",
+            "type": "uint256[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "iron",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "carbon",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "silicon",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "gold",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct FleetsStruct.Asset",
+            "name": "asset",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct FleetsStruct.Fleet[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "userFleetsMap",
+    "outputs": [
+      {
+        "internalType": "enum FleetsStruct.FleetStatus",
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "missionStartTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "missionEndTime",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "iron",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "carbon",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "silicon",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "gold",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FleetsStruct.Asset",
+        "name": "asset",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

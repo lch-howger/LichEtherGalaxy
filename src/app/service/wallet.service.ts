@@ -29,6 +29,14 @@ export class WalletService {
   public lpToken01Contract: any
   public lpToken02Contract: any
 
+  //new
+  public newShipContract: any
+  public newFleetsContract: any
+  public newHomeContract: any
+  public newLightYearContract: any
+  public newRegistryContract: any
+  public newHomeProxyContract: any
+
   public nowDetailIndex: number = 0
 
   constructor() {
@@ -58,6 +66,14 @@ export class WalletService {
     this.stakingContract = new this.web3.eth.Contract(contractAbi.abi_staking, config.ADDR_STAKING)
     this.lpToken01Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_LP_TOKEN01)
     this.lpToken02Contract = new this.web3.eth.Contract(contractAbi.abi_resource, config.ADDR_LP_TOKEN02)
+
+    //new
+    this.newShipContract = new this.web3.eth.Contract(contractAbi.abi_new_ship, config.ADDR_NEW_SHIP)
+    this.newFleetsContract = new this.web3.eth.Contract(contractAbi.abi_new_fleets, config.ADDR_NEW_FLEETS_PROXY)
+    this.newHomeContract = new this.web3.eth.Contract(contractAbi.abi_new_home, config.ADDR_NEW_HOME_PROXY)
+    this.newLightYearContract = new this.web3.eth.Contract(contractAbi.abi_new_light_year, config.ADDR_NEW_LIGHT_YEAR)
+    this.newRegistryContract = new this.web3.eth.Contract(contractAbi.abi_new_registry, config.ADDR_NEW_REGISTRY)
+    this.newHomeProxyContract = new this.web3.eth.Contract(contractAbi.abi_new_home_proxy, config.ADDR_NEW_HOME_PROXY)
 
     this.shipContract.events.Transfer({}, function (error: any, event: any) {
       console.log(error)
