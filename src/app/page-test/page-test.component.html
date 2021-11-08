@@ -13,7 +13,19 @@
 <button (click)="setFleetsAddress()">Proxy setFleets</button><br>
 
 <p>我的基地资源：{{this.homeAssets}}</p>
-<button (click)="checkMsgSender()">查看msgSender</button>
-<button (click)="addHomeAssets()">添加1000基地资源</button><br>
-<button (click)="addHomeAssetsOperator()">添加1000基地资源Operator</button><br>
-<button (click)="upgradeHomeLevel()">升级基地</button><br>
+<!--<button (click)="checkMsgSender()">查看msgSender</button>-->
+<!--<button (click)="addHomeAssets()">添加1000基地资源</button><br>-->
+<!--<button (click)="addHomeAssetsOperator()">添加1000基地资源Operator</button><br>-->
+<!--<button (click)="upgradeHomeLevel()">升级基地</button><br>-->
+
+<button (click)="initLightYear()">Init Light Year</button>
+<button (click)="buildShip()">Build Ship</button>
+<button (click)="allIdleShips()">All Idle Ships</button>
+<br>
+
+<button (click)="createFleet()">New Fleet</button>
+<button (click)="fleetLength()">Fleet Length</button>
+<br>
+
+<input type="text" [(ngModel)]="inputFormation">
+<button (click)="fleetFormation()">Fleet Formation</button>

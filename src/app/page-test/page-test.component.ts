@@ -18,6 +18,8 @@ export class PageTestComponent implements OnInit {
   inputLightYear: any
   inputHome: any
   inputFleets: any
+  inputFormation: any
+
   homeAssets: any
 
   constructor(private walletService: WalletService) {
@@ -64,5 +66,32 @@ export class PageTestComponent implements OnInit {
 
   upgradeHomeLevel() {
     //this.walletService.newLightYearContract.methods.
+  }
+
+  initLightYear() {
+    this.walletService.newLightYearContract.methods.initRegistry().send({from: this.addr})
+  }
+
+  async buildShip() {
+    this.walletService.newLightYearContract.methods.buildShip(1).send({from: this.addr})
+  }
+
+  async allIdleShips() {
+    let balance = await this.walletService.newShipContract.methods.balanceOf(this.addr).call();
+    alert(balance)
+  }
+
+  createFleet() {
+    this.walletService.newLightYearContract.methods.createFleet().send({from: this.addr})
+  }
+
+  async fleetLength() {
+    let fleetLength = await this.walletService.newFleetsContract.methods.userFleets(this.addr).call();
+    alert(fleetLength)
+  }
+
+  fleetFormation() {
+    let array = this.inputFormation.split(",");
+    this.walletService.newLightYearContract.methods.fleetFormation(0, array).send({from: this.addr})
   }
 }
